@@ -1,1 +1,2 @@
-alias ll="ls -al"
+PROMPT="%U%n@%m | %1/%u$ "
+export PROMPT
