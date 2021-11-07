@@ -579,3 +579,6 @@ client.connect_signal("property::position", function(c)
     end
 end)
 -- }}}
+
+-- Autostart applications
+awful.spawn.with_shell("nitrogen --restore")
