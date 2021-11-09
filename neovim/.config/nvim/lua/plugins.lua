@@ -12,7 +12,6 @@ require("packer").startup(function()
 
     -- language server protocol
     use("neovim/nvim-lspconfig")
-    use("kabouzeid/nvim-lspinstall")
 
     -- color schemes
     use("Mofiqul/vscode.nvim")
