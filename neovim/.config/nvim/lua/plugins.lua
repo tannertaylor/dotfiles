@@ -15,5 +15,5 @@ require("packer").startup(function()
     use("kabouzeid/nvim-lspinstall")
 
     -- color schemes
-    use("tomasr/molokai")
+    use("Mofiqul/vscode.nvim")
 end)
