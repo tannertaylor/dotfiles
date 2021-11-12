@@ -18,4 +18,7 @@ require("packer").startup(function(use)
 
     -- prompt
     use("nvim-lualine/lualine.nvim")
+
+    -- auto pair plugin
+    use("steelsojka/pears.nvim")
 end)
