@@ -7,3 +7,6 @@ map_key("n", "<C-w>-", ":sp<CR>", options)
 
 -- map insert-mode keys
 map_key("i", "", "<C-w>", options) -- convert ctrl+backspace to delete previous word
+
+-- map command-mode keys
+map_key("c", "", "<C-w>", options) -- convert ctrl+backspace to delete previous word in command mode
