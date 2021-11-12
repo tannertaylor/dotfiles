@@ -15,4 +15,7 @@ require("packer").startup(function(use)
 
     -- color schemes
     use("Mofiqul/vscode.nvim")
+
+    -- prompt
+    use("nvim-lualine/lualine.nvim")
 end)
