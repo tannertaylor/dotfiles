@@ -22,3 +22,11 @@ lsp.sumneko_lua.setup {
         }
     }
 }
+
+-- setup omnisharp
+local omnisharp_bin_path = "/usr/bin/omnisharp"
+local nvim_pid = vim.fn.getpid()
+
+lsp.omnisharp.setup {
+    cmd = { omnisharp_bin_path, "--language-server", "--hostPID", tostring(nvim_pid) }
+}
