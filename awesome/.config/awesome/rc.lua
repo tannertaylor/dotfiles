@@ -534,3 +534,4 @@ end)
 
 -- Autostart applications
 awful.spawn.with_shell("nitrogen --restore")
+awful.spawn.with_shell("picom")
