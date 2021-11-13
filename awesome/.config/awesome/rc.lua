@@ -8,7 +8,7 @@ local menubar = require("menubar")
 local hotkeys_popup = require("awful.hotkeys_popup")
 local constants = require("constants")
 
--- Enable hotkeys help widget for VIM and other apps
+-- enable hotkeys help widget for VIM and other apps
 -- when client with a matching name is opened:
 require("awful.hotkeys_popup.keys")
 
@@ -16,7 +16,7 @@ require("awful.hotkeys_popup.keys")
 require("error_handling")
 
 -- initialize theme variables
-beautiful.init(gears.filesystem.get_themes_dir() .. "default/theme.lua")
+beautiful.init(gears.filesystem.get_configuration_dir() .. "theme.lua")
 
 -- This is used later as the default terminal and editor to run.
 local terminal = "alacritty"
