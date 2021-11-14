@@ -133,9 +133,9 @@ root.buttons(gears.table.join(
     awful.button({ }, 4, awful.tag.viewnext),
     awful.button({ }, 5, awful.tag.viewprev)
 ))
--- }}}
+--
 
--- {{{ Key bindings
+-- Key bindings
 globalkeys = gears.table.join(
     awful.key({ modkey }, "s", hotkeys_popup.show_help, {
         description="show help",
@@ -391,9 +391,9 @@ clientbuttons = gears.table.join(
 
 -- Set keys
 root.keys(globalkeys)
--- }}}
+--
 
--- {{{ Rules
+-- Rules
 -- Rules to apply to new clients (through the "manage" signal).
 awful.rules.rules = {
     -- All clients will match this rule.
@@ -449,9 +449,8 @@ awful.rules.rules = {
     -- { rule = { class = "Firefox" },
     --   properties = { screen = 1, tag = "2" } },
 }
--- }}}
 
--- {{{ Signals
+-- Signals
 -- Signal function to execute when a new client appears.
 client.connect_signal("manage", function (c)
     -- Set the windows at the slave,
@@ -513,24 +512,9 @@ end)
 
 client.connect_signal("focus", function(c) c.border_color = beautiful.border_focus end)
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
--- }}}
 
--- Correct Steam bug with window outside of the screen
-client.connect_signal("property::position", function(c)
-    if c.class == "Steam" then
-        local g = c.screen.geometry
-        if c.y + c.height > g.height then
-            c.y = g.height - c.height
-            naughty.notify {
-                text = "restricted window: " .. c.name
-            }
-        end
-        if c.x + c.width > g.width then
-            c.x = g.width - c.width
-        end
-    end
-end)
--- }}}
+-- fix steam window bug
+require("fix_steam_bug")
 
 -- Autostart applications
 awful.spawn.with_shell("nitrogen --restore")
