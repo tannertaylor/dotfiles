@@ -10,8 +10,9 @@ require("packer").startup(function(use)
     -- have packer update itself
     use("wbthomason/packer.nvim")
 
-    -- language server protocol
+    -- language server protocol and install
     use("neovim/nvim-lspconfig")
+    use("kabouzeid/nvim-lspinstall")
 
     -- color schemes
     use("Mofiqul/vscode.nvim")
