@@ -53,10 +53,10 @@ lsp["sumneko_lua"].setup {
 
 -- setup omnisharp
 -- LspInstall csharp
-local omnisharp_bin_path = vim.fn.stdpath("data") .. "lspinstall/csharp/omnisharp"
+local omnisharp_bin_path = vim.fn.stdpath("data") .. "/lspinstall/csharp/omnisharp/run"
 local nvim_pid = vim.fn.getpid()
 
 lsp["omnisharp"].setup {
-    cmd = { omnisharp_bin_path, "--language-server", "--hostPID", tostring(nvim_pid) },
+    cmd = { omnisharp_bin_path, "--languageserver", "--hostPID", tostring(nvim_pid) },
     capabilities = client_capabilities
 }
