@@ -14,7 +14,9 @@ auto_complete.setup({
         { name = "vsnip" }
     }),
     mapping = {
-        ["<CR>"] = auto_complete.mapping(auto_complete.mapping.confirm({ select = true }), { "i" })
+        ["<CR>"] = auto_complete.mapping(auto_complete.mapping.confirm({ select = true }), { "i" }),
+        ["<Tab>"] = auto_complete.mapping(auto_complete.mapping.select_next_item(), { "i", "c" }),
+        ["<S-Tab>"] = auto_complete.mapping(auto_complete.mapping.select_prev_item(), { "i", "c" })
     }
 })
 
