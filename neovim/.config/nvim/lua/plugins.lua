@@ -19,6 +19,12 @@ require("packer").startup(function(use)
     use("hrsh7th/cmp-nvim-lsp")
     use("hrsh7th/vim-vsnip")
 
+    -- fuzzy finder
+    use({
+        "nvim-telescope/telescope.nvim",
+        requires = { { "nvim-lua/plenary.nvim" } }
+    })
+
     -- color schemes
     use("Mofiqul/vscode.nvim")
 

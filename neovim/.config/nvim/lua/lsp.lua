@@ -23,6 +23,7 @@ local client_capabilities = vim.lsp.protocol.make_client_capabilities()
 client_capabilities = require("cmp_nvim_lsp").update_capabilities(client_capabilities)
 
 -- setup lua language server
+-- LspInstall lua
 local sumneko_root_path = vim.fn.stdpath("data") .. "/lspinstall/lua/sumneko-lua/extension/server"
 local sumneko_bin_path = sumneko_root_path .. "/bin/Linux/lua-language-server"
 
