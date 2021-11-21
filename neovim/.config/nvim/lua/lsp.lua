@@ -30,7 +30,7 @@ local sumneko_root_path = vim.fn.stdpath("data") .. "/lspinstall/lua/sumneko-lua
 local sumneko_bin_path = sumneko_root_path .. "/bin/Linux/lua-language-server"
 
 lsp["sumneko_lua"].setup {
-    cmd = { sumneko_bin_path, "-E", sumneko_root_path .. "/main.lua" };
+    cmd = { sumneko_bin_path, "-E", sumneko_root_path .. "/main.lua" },
     capabilities = client_capabilities,
     settings = {
         Lua = {
@@ -52,9 +52,11 @@ lsp["sumneko_lua"].setup {
 }
 
 -- setup omnisharp
-local omnisharp_bin_path = "/usr/bin/omnisharp"
+-- LspInstall csharp
+local omnisharp_bin_path = vim.fn.stdpath("data") .. "lspinstall/csharp/omnisharp"
 local nvim_pid = vim.fn.getpid()
 
 lsp["omnisharp"].setup {
-    cmd = { omnisharp_bin_path, "--language-server", "--hostPID", tostring(nvim_pid) }
+    cmd = { omnisharp_bin_path, "--language-server", "--hostPID", tostring(nvim_pid) },
+    capabilities = client_capabilities
 }
