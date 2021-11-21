@@ -14,6 +14,11 @@ require("packer").startup(function(use)
     use("neovim/nvim-lspconfig")
     use("kabouzeid/nvim-lspinstall")
 
+    -- completion engine
+    use("hrsh7th/nvim-cmp")
+    use("hrsh7th/cmp-nvim-lsp")
+    use("hrsh7th/vim-vsnip")
+
     -- color schemes
     use("Mofiqul/vscode.nvim")
 
