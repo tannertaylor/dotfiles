@@ -5,6 +5,7 @@ local options = { noremap = true }
 vim.g.mapleader = " "
 
 -- map normal-mode keys
+map_key("n", "<C-n>", ":NERDTreeToggle<CR>", options)
 map_key("n", "<C-w><Bslash>", ":vsp<CR>", options)
 map_key("n", "<C-w>-", ":sp<CR>", options)
 map_key("n", "<C-kPoint>", ":Telescope lsp_code_actions", options)

@@ -33,4 +33,7 @@ require("packer").startup(function(use)
 
     -- auto pair plugin
     use("steelsojka/pears.nvim")
+
+    -- file explorer plugin
+    use("preservim/nerdtree")
 end)
