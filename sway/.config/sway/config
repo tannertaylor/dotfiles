@@ -56,7 +56,7 @@ output eDP-1 scale 2
 # You can get the names of your inputs by running: swaymsg -t get_inputs
 # Read `man 5 sway-input` for more information about this section.
 
-input * {
+input type:touchpad {
     natural_scroll enabled
 }
 
