@@ -13,4 +13,4 @@ options.number = true
 options.relativenumber = true
 
 -- set theme style to dark
--- globals.vscode_style = "dark"
+globals.vscode_style = "dark"
