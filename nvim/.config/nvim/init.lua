@@ -7,4 +7,6 @@ require("keymap")
 
 -- simple plugin "setups"
 require("lualine").setup()
-require("pears").setup()
+require("pears").setup(function(conf)
+    conf.preset("tag_matching")
+end)
