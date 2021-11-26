@@ -14,3 +14,6 @@ options.relativenumber = true
 
 -- set theme style to dark
 globals.vscode_style = "dark"
+
+-- vimspector settings
+globals.vimspector_enable_mappings = "HUMAN"
