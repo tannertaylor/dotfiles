@@ -15,5 +15,8 @@ options.relativenumber = true
 -- set theme style to dark
 globals.vscode_style = "dark"
 
+-- nerdtree settings
+globals.NERDTreeShowHidden = true
+
 -- vimspector settings
 globals.vimspector_enable_mappings = "HUMAN"
