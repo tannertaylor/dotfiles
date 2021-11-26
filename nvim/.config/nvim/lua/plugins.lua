@@ -31,6 +31,9 @@ require("packer").startup(function(use)
         requires = { { "nvim-lua/plenary.nvim" } }
     })
 
+    -- debugging
+    use("puremourning/vimspector")
+
     -- color schemes
     use("Mofiqul/vscode.nvim")
 
