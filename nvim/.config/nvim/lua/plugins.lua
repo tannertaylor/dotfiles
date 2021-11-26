@@ -19,6 +19,12 @@ require("packer").startup(function(use)
     use("hrsh7th/cmp-nvim-lsp")
     use("hrsh7th/vim-vsnip")
 
+    -- advanced highlighting
+    use({
+        "nvim-treesitter/nvim-treesitter",
+        run = ":TSUpdate"
+    })
+
     -- fuzzy finder
     use({
         "nvim-telescope/telescope.nvim",
