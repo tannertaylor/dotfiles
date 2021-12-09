@@ -40,8 +40,9 @@ require("packer").startup(function(use)
     -- prompt
     use("nvim-lualine/lualine.nvim")
 
-    -- auto pair plugin
+    -- auto pair plugins
     use("steelsojka/pears.nvim")
+    use("alvan/vim-closetag")
 
     -- file explorer plugin
     use("preservim/nerdtree")
