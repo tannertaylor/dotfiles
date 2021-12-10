@@ -1,5 +1,5 @@
 -- imports
-local lsp = require("lspconfig")
+local lsp_installer = require("nvim-lsp-installer")
 local auto_complete = require("cmp")
 
 -- LSP handler overrides
@@ -27,43 +27,60 @@ auto_complete.setup({
     }
 })
 
+-- install language servers
+local servers = {
+    "bashls",
+    "clangd",
+    "cssls",
+    "dockerls",
+    "html",
+    "jsonls",
+    "omnisharp",
+    "pyright",
+    "sumneko_lua",
+    "sqlls",
+    "tsserver",
+    "yamlls"
+}
+
+for _, server_name in ipairs(servers) do
+    local server_found, server = lsp_installer.get_server(server_name)
+    if server_found then
+        if not server:is_installed() then
+            server:install()
+        end
+    end
+end
+
 -- setup LSP client capabilities
 local client_capabilities = vim.lsp.protocol.make_client_capabilities()
 client_capabilities = require("cmp_nvim_lsp").update_capabilities(client_capabilities)
 
--- setup lua language server
--- LspInstall lua
-local sumneko_root_path = vim.fn.stdpath("data") .. "/lspinstall/lua/sumneko-lua/extension/server"
-local sumneko_bin_path = sumneko_root_path .. "/bin/Linux/lua-language-server"
+-- setup language servers
+lsp_installer.on_server_ready(function(server)
+    local options = {
+        capabilities = client_capabilities
+    }
 
-lsp["sumneko_lua"].setup {
-    cmd = { sumneko_bin_path, "-E", sumneko_root_path .. "/main.lua" },
-    capabilities = client_capabilities,
-    settings = {
-        Lua = {
-            runtime = {
-                version = "LuaJIT",
-                path = vim.split(package.path, ";")
-            },
-            diagnostics = {
-                globals = { "vim" }
-            },
-            workspace = {
-                library = vim.api.nvim_get_runtime_file("", true)
-            },
-            telemetry = {
-                enable = false
+    if server.name == "sumneko_lua" then
+        options.settings = {
+            Lua = {
+                runtime = {
+                    version = "LuaJIT",
+                    path = vim.split(package.path, ";")
+                },
+                diagnostics = {
+                    globals = { "vim" }
+                },
+                workspace = {
+                    library = vim.api.nvim_get_runtime_file("", true)
+                },
+                telemetry = {
+                    enable = false
+                }
             }
         }
-    }
-}
+    end
 
--- setup omnisharp
--- LspInstall csharp
-local omnisharp_bin_path = vim.fn.stdpath("data") .. "/lspinstall/csharp/omnisharp/run"
-local nvim_pid = vim.fn.getpid()
-
-lsp["omnisharp"].setup {
-    cmd = { omnisharp_bin_path, "--languageserver", "--hostPID", tostring(nvim_pid) },
-    capabilities = client_capabilities
-}
+    server:setup(options)
+end)

@@ -12,7 +12,7 @@ require("packer").startup(function(use)
 
     -- language server protocol and install
     use("neovim/nvim-lspconfig")
-    use("kabouzeid/nvim-lspinstall")
+    use("williamboman/nvim-lsp-installer")
 
     -- completion engine
     use("hrsh7th/nvim-cmp")
