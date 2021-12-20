@@ -29,6 +29,10 @@ client.focused "#9f1209" "#9f1209" "#ffffff" "#9f1209"
 output * bg ~/pics/wallpapers/red_and_black_triangles.jpg fill
 output eDP-1 scale 2
 
+output * {
+    enable
+}
+
 output DP-2 {
     enable
     mode 3440x1440
