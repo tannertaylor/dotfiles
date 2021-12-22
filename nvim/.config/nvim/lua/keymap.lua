@@ -35,6 +35,7 @@ map_normal_key("gr", ":Telescope lsp_references<CR>")
 map_normal_key("gi", ":Telescope lsp_implementations<CR>")
 map_normal_key("gt", ":Telescope lsp_workspace_symbols<CR>")
 map_normal_key("ga", ":Telescope live_grep<CR>")
+map_normal_key("gf", ":Telescope find_files<CR>")
 
 -- map insert-mode keys
 map_insert_key("", "<C-w>") -- convert ctrl+backspace to delete previous word
