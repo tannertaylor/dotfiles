@@ -27,7 +27,6 @@ unbind_normal_key("r")
 map_normal_key("rr", ":lua vim.lsp.buf.rename()<CR>")
 map_normal_key("gd", ":lua vim.lsp.buf.definition()<CR>")
 map_normal_key("K", ":lua vim.lsp.buf.hover()<CR>")
-map_normal_key("<C-Space>", ":lua vim.lsp.buf.signature_help<CR>")
 map_normal_key("F", ":lua vim.lsp.buf.formatting()<CR>")
 
 -- Telescope keymaps
@@ -39,7 +38,7 @@ map_normal_key("ga", ":Telescope live_grep<CR>")
 
 -- map insert-mode keys
 map_insert_key("", "<C-w>") -- convert ctrl+backspace to delete previous word
-map_insert_key("<C-Space", "<C-o>:lua vim.lsp.buf.signature_help()<CR>")
+map_insert_key("<C-Space>", "<C-o>:lua vim.lsp.buf.signature_help()<CR>")
 
 -- map command-mode keys
 map_command_key("", "<C-w>") -- convert ctrl+backspace to delete previous word
