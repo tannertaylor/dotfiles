@@ -1,0 +1,27 @@
+{
+    "layer": "top",
+    "height": 25,
+
+    "modules-left": [
+        "sway/workspaces"
+    ],
+    "modules-center": [
+        "sway/window"
+    ],
+    "modules-right": [
+        "backlight",
+        "battery",
+        "clock"
+    ],
+
+    "backlight": {
+        "format": "Brightness: {percent}%"
+    },
+    "battery": {
+        "format": "Battery: {capacity}%"
+    },
+    "clock": {
+        "interval": 1,
+        "format": "{:%I:%M:%S %p}"
+    }
+}
