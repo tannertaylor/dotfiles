@@ -19,8 +19,8 @@ local map_command_key = function(keys, command)
 end
 
 -- map normal-mode keys
--- NERDTree keymaps
-map_normal_key("<C-n>", ":NERDTreeToggle<CR>")
+-- nvim-tree keymaps
+map_normal_key("<C-n>", ":NvimTreeToggle<CR>")
 
 -- LSP keymaps
 unbind_normal_key("r")
