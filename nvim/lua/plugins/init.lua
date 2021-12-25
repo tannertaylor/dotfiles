@@ -46,5 +46,8 @@ require("packer").startup(function(use)
     use("alvan/vim-closetag")
 
     -- file explorer plugin
-    use("preservim/nerdtree")
+    use("kyazdani42/nvim-tree.lua")
 end)
+
+require("plugins.treesitter")
+require("plugins.lualine")
