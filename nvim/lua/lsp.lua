@@ -63,6 +63,8 @@ lsp_installer.on_server_ready(function(server)
     }
 
     if server.name == "sumneko_lua" then
+        options.cmd = { vim.fn.stdpath("data") .. "/lsp_servers/sumneko_lua/extension/server/bin/Linux/lua-language-server" }
+        
         options.settings = {
             Lua = {
                 runtime = {
