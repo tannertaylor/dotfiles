@@ -42,7 +42,7 @@ require("packer").startup(function(use)
     use("nvim-lualine/lualine.nvim")
 
     -- auto pair plugins
-    use("steelsojka/pears.nvim")
+    use("windwp/nvim-autopairs")
     use("alvan/vim-closetag")
 
     -- file explorer plugin
@@ -57,3 +57,4 @@ require("plugins.treesitter")
 require("plugins.lualine")
 require("plugins.nvim-tree")
 require("plugins.toggleterm")
+require("plugins.autopairs")
