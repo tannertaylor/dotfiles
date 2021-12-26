@@ -51,6 +51,9 @@ require("packer").startup(function(use)
 
     -- terminal plugin
     use("akinsho/toggleterm.nvim")
+
+    -- git plugins
+    use("lewis6991/gitsigns.nvim")
 end)
 
 require("plugins.treesitter")
@@ -58,3 +61,4 @@ require("plugins.lualine")
 require("plugins.nvim-tree")
 require("plugins.toggleterm")
 require("plugins.autopairs")
+require("plugins.gitsigns")
