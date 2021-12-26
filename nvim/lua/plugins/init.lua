@@ -48,8 +48,12 @@ require("packer").startup(function(use)
     -- file explorer plugin
     use("kyazdani42/nvim-tree.lua")
     use("kyazdani42/nvim-web-devicons")
+
+    -- terminal plugin
+    use("akinsho/toggleterm.nvim")
 end)
 
 require("plugins.treesitter")
 require("plugins.lualine")
 require("plugins.nvim-tree")
+require("plugins.toggleterm")
