@@ -19,6 +19,12 @@ local map_command_key = function(keys, command)
 end
 
 -- map normal-mode keys
+-- window shortcuts
+map_normal_key("<C-h>", "<C-w>h")
+map_normal_key("<C-j>", "<C-w>j")
+map_normal_key("<C-k>", "<C-w>k")
+map_normal_key("<C-l>", "<C-w>l")
+
 -- nvim-tree keymaps
 map_normal_key("<C-n>", ":NvimTreeToggle<CR>")
 
