@@ -36,6 +36,7 @@ local servers = {
     "html",
     "jsonls",
     "omnisharp",
+    "powershell_es",
     "pyright",
     "sumneko_lua",
     "sqlls",
