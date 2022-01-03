@@ -3,7 +3,6 @@ PROMPT="%n@%m | %1~ > "
 
 # Aliases
 alias ll="ls -al"
-alias vim="nvim"
 alias brave="brave --enable-features=UseOzonePlatform --ozone-platform=wayland"
 
 # Key bindings
