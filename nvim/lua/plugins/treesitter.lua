@@ -4,7 +4,23 @@ if not success then
 end
 
 treesitter_configs.setup {
-    ensure_installed = { "c_sharp", "lua" },
+    ensure_installed = {
+        "bash",
+        "c",
+        "cmake",
+        "cpp",
+        "c_sharp",
+        "css",
+        "dockerfile",
+        "html",
+        "javascript",
+        "json",
+        "lua",
+        "make",
+        "typescript",
+        "vim",
+        "yaml"
+    },
     highlight = {
         enable = true
     }
