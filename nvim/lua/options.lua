@@ -2,6 +2,8 @@ local tab_width = 4
 
 local options = {
     backup = false,
+    breakindent = true,
+    breakindentopt = "shift:" .. tab_width,
     cursorline = true,
     expandtab = true,
     fileencoding = "utf-8",
