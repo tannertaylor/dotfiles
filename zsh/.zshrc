@@ -3,7 +3,6 @@ PROMPT="%n@%m | %1~ > "
 
 # Aliases
 alias ll="ls -al"
-alias brave="brave --enable-features=UseOzonePlatform --ozone-platform=wayland"
 
 # Key bindings
 bindkey "^[[3~" delete-char
