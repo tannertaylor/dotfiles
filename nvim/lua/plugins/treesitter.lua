@@ -12,7 +12,6 @@ treesitter_configs.setup {
         "c_sharp",
         "css",
         "dockerfile",
-        "html",
         "javascript",
         "json",
         "lua",
