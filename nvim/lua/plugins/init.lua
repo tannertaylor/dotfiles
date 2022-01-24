@@ -54,6 +54,9 @@ require("packer").startup(function(use)
 
     -- git plugins
     use("lewis6991/gitsigns.nvim")
+
+    -- comments
+    use("numToStr/Comment.nvim")
 end)
 
 require("plugins.treesitter")
@@ -62,3 +65,4 @@ require("plugins.nvim-tree")
 require("plugins.toggleterm")
 require("plugins.autopairs")
 require("plugins.gitsigns")
+require("plugins.comment")
