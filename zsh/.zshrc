@@ -16,6 +16,7 @@ source $POWERLEVEL10K_DIR/powerlevel10k.zsh-theme
 
 # Aliases
 alias ll="ls -al"
+alias tf="terraform"
 
 # Key bindings
 bindkey "^[[3~" delete-char
