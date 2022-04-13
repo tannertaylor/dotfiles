@@ -16,6 +16,7 @@ source $POWERLEVEL10K_DIR/powerlevel10k.zsh-theme
 
 # Aliases
 alias ll="ls -al"
+alias cl="clear"
 alias tf="terraform"
 
 # Key bindings
