@@ -14,6 +14,9 @@ fi
 
 source $POWERLEVEL10K_DIR/powerlevel10k.zsh-theme
 
+# Environment variables
+export EDITOR="vim"
+
 # Aliases
 alias ll="ls -al"
 alias cl="clear"
