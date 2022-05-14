@@ -17,7 +17,7 @@ source $POWERLEVEL10K_DIR/powerlevel10k.zsh-theme
 # Environment variables
 export EDITOR="vim"
 export GOPATH="$HOME/go"
-export PATH="$GOPATH/bin:$PATH"
+export PATH="$GOPATH/bin:$HOME/.dotnet/tools:$PATH"
 
 # Aliases
 alias ll="ls -al"
