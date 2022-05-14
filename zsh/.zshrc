@@ -16,6 +16,8 @@ source $POWERLEVEL10K_DIR/powerlevel10k.zsh-theme
 
 # Environment variables
 export EDITOR="vim"
+export GOPATH="$HOME/go"
+export PATH="$GOPATH/bin:$PATH"
 
 # Aliases
 alias ll="ls -al"
