@@ -175,4 +175,6 @@ bar {
     }
 }
 
+gaps inner 16
+
 include /etc/sway/config.d/*
