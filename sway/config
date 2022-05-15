@@ -160,9 +160,11 @@ mode "resize" {
 
 ### Status Bar:
 # Read `man 5 sway-bar` for more information about this section.
-
 bar swaybar_command waybar
 
+### Misc.
 gaps inner 16
+default_border pixel
 
+### Other configs
 include /etc/sway/config.d/*
