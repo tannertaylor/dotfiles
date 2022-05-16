@@ -18,7 +18,7 @@ set $term alacritty
 set $menu swaymsg exec "wofi --show drun"
 
 ### Output configuration
-output * bg ~/Pictures/wallpapers/night-minimal.jpg fill
+output * bg ~/Pictures/wallpapers/night-minimal-red-sat.jpg fill
 
 ### Input configuration
 input type:touchpad {
