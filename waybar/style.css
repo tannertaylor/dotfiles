@@ -1,0 +1,29 @@
+* {
+    font-family: "CaskaydiaCove Nerd Font Mono";
+    font-size: 1rem;
+}
+
+window#waybar {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+#workspaces button {
+    border-radius: 0px;
+}
+
+#workspaces button.focused {
+    background-color: rgba(40, 40, 40, 0.75);
+}
+
+.modules-right label {
+    padding: 0 10px;
+}
+
+label#battery {
+    background-color: #8A0000;
+    font-size: 1.5rem;
+}
+
+label#clock {
+    background-color: #580000;
+}

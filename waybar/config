@@ -11,25 +11,19 @@
         "sway/window"
     ],
     "modules-right": [
-        "backlight",
-        "battery#bat1",
-        "battery#bat2",
+        "battery",
         "clock"
     ],
 
-    "backlight": {
-        "format": "Brightness: {percent}%"
-    },
-    "battery#bat1": {
-        "format": "Battery 1: {capacity}%",
-        "bat": "BAT1"
-    },
-    "battery#bat2": {
-        "format": "Battery 2: {capacity}%",
-        "bat": "BAT2"
+    "battery": {
+        "adapter": "ADP1",
+        "format": "{icon}",
+        "format-icons": [ "\uf377", "\uf243", "\uf242", "\uf241", "\uf240" ],
+        "rotate": 90
     },
     "clock": {
         "interval": 1,
-        "format": "{:%I:%M:%S %p}"
+        "format": "{:%I:%M:%S %p}",
+        "tooltip-format": "{calendar}"
     }
 }
