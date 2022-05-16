@@ -3,7 +3,7 @@ eval "$(oh-my-posh init zsh --config ~/.poshthemes/night-owl.omp.json)"
 # Environment variables
 export EDITOR="vim"
 export GOPATH="$HOME/code/go"
-export PATH="$GOPATH/bin:$HOME/.dotnet/tools:$PATH"
+export PATH="$PATH:$HOME/.dotnet/tools:/usr/local/go/bin"
 
 # Aliases
 alias ll="ls -al"
