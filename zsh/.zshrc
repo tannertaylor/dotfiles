@@ -24,6 +24,7 @@ export PATH="$GOPATH/bin:$HOME/.dotnet/tools:$PATH"
 # Aliases
 alias ll="ls -al"
 alias cl="clear"
+alias pwsh="pwsh -nologo"
 alias tf="terraform"
 
 # Key bindings
