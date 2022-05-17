@@ -19,6 +19,11 @@ window#waybar {
     padding: 0 10px;
 }
 
+label#network {
+    background-color: #8A0000;
+    font-size: 1.5rem;
+}
+
 label#battery {
     background-color: #8A0000;
     font-size: 1.5rem;
