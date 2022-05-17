@@ -11,11 +11,21 @@
         "sway/window"
     ],
     "modules-right": [
+        "pulseaudio",
         "network",
         "battery",
         "clock"
     ],
 
+    "pulseaudio": {
+        "format": "{icon}",
+        "format-muted": "\uf6a9",
+        "format-icons": {
+            "default": [ "\uf026", "\uf027", "\uf028" ]
+        },
+        "tooltip-format": "{desc}: {volume}%",
+        "on-click": "pavucontrol"
+    },
     "network": {
         "format": "\uf6ac",
         "format-wifi": "\uf1eb",
