@@ -11,15 +11,24 @@
         "sway/window"
     ],
     "modules-right": [
+        "network",
         "battery",
         "clock"
     ],
 
+    "network": {
+        "format": "\uf6ac",
+        "format-wifi": "\uf1eb",
+        "format-ethernet": "\uf6ff",
+        "tooltip-format": "{ifname}",
+        "tooltip-format-wifi": "{essid} ({signalStrength}%)",
+        "tooltip-format-ethernet": "{ifname}",
+        "tooltip-format-disconnected": "Disconnected"
+    },
     "battery": {
         "adapter": "ADP1",
         "format": "{icon}",
         "format-icons": [ "\uf377", "\uf243", "\uf242", "\uf241", "\uf240" ],
-        "rotate": 90,
         "tooltip-format": "{capacity}%: {time}"
     },
     "clock": {
