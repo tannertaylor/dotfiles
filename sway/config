@@ -18,7 +18,18 @@ set $term alacritty
 set $menu swaymsg exec "wofi --show drun"
 
 ### Output configuration
-output * bg ~/Pictures/wallpapers/night-minimal-red-sat.jpg fill
+output * {
+    background ~/Pictures/wallpapers/night-minimal-red-sat.jpg fill
+}
+
+output "Unknown Sceptre C35 0000000000000" {
+    mode 3440x1440@59.999Hz
+    position 0 0
+}
+
+output "Unknown 0x0554 0x00000DA1" {
+    position 3440 0
+}
 
 ### Input configuration
 input type:touchpad {
@@ -165,6 +176,7 @@ bar swaybar_command waybar
 ### Misc.
 gaps inner 16
 default_border pixel
+exec kanshi
 
 ### Other configs
 include /etc/sway/config.d/*

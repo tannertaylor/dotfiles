@@ -1,0 +1,8 @@
+profile "docked" {
+    output "Unknown 0x0554 0x00000DA1" disable
+    output "Unknown Sceptre C35 0000000000000" mode 3440x1440@59.999Hz
+}
+
+profile "mobile" {
+    output "Unknown 0x0554 0x00000DA1" enable mode 3240x2160@59.995Hz
+}
