@@ -1,29 +1,34 @@
--- aliases
-local set_buffer_option = vim.api.nvim_buf_set_option
-local set_window_option = vim.api.nvim_win_set_option
-local set_global_option = vim.api.nvim_set_option
+-- define options
+local tab_width = 2
+local buffer_options = {
+  ['tabstop'] = tab_width,
+  ['shiftwidth'] = tab_width,
+  ['expandtab'] = true
+}
 
--- buffer options
-local set_buffer_options = function(args)
-  local bufnr = args.buf
+local window_options = {
+  ['number'] = true,
+  ['relativenumber'] = true
+}
 
-  -- tabs
-  local tab_width = 2
-  set_buffer_option(bufnr, 'tabstop', tab_width)
-  set_buffer_option(bufnr, 'shiftwidth', tab_width)
-  set_buffer_option(bufnr, 'expandtab', true)
-end
+local global_options = {
+  ['splitbelow'] = true,
+  ['splitright'] = true
+}
 
+-- apply options
 vim.api.nvim_create_autocmd('BufEnter', {
-  callback = set_buffer_options
+  callback = function(args)
+    for option, value in pairs(buffer_options) do
+      vim.api.nvim_buf_set_option(args.buf, option, value)
+    end
+  end
 })
 
--- window options
--- line numbers
-set_window_option(0, 'number', true)
-set_window_option(0, 'relativenumber', true)
+for option, value in pairs(window_options) do
+  vim.api.nvim_win_set_option(0, option, value)
+end
 
--- global options
--- splits
-set_global_option('splitbelow', true)
-set_global_option('splitright', true)
+for option, value in pairs(global_options) do
+  vim.api.nvim_set_option(option, value)
+end
