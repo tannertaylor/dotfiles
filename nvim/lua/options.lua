@@ -1,6 +1,7 @@
 -- aliases
 local set_buffer_option = vim.api.nvim_buf_set_option
 local set_window_option = vim.api.nvim_win_set_option
+local set_global_option = vim.api.nvim_set_option
 
 -- buffer options
 local set_buffer_options = function(args)
@@ -22,3 +23,7 @@ vim.api.nvim_create_autocmd('BufEnter', {
 set_window_option(0, 'number', true)
 set_window_option(0, 'relativenumber', true)
 
+-- global options
+-- splits
+set_global_option('splitbelow', true)
+set_global_option('splitright', true)
