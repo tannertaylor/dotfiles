@@ -3,7 +3,8 @@ local tab_width = 2
 local buffer_options = {
   ['tabstop'] = tab_width,
   ['shiftwidth'] = tab_width,
-  ['expandtab'] = true
+  ['expandtab'] = true,
+  ['omnifunc'] = 'v:lua.vim.lsp.omnifunc'
 }
 
 local window_options = {
