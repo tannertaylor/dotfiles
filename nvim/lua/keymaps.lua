@@ -1,36 +1,38 @@
--- define keymaps per mode
-local normal_keymaps = {
-  -- general keymaps
-  ['<c-s>'] = '<cmd>w<CR>',
-  ['<c-z>'] = 'u',
+-- imports
+require('util.string')
+require('util.cursor')
 
-  -- window keymaps
-  ['<c-h>'] = '<c-w>h',
-  ['<c-j>'] = '<c-w>j',
-  ['<c-k>'] = '<c-w>k',
-  ['<c-l>'] = '<c-w>l'
+-- aliases
+local map = vim.keymap.set
+
+-- general keymaps (e.g., save, undo, redo, etc.)
+map({ 'n', 'i' }, '<c-s>', '<cmd>w<cr>')
+map('n', '<c-z>', 'u')
+map('i', '<c-z>', '<esc>ua')
+
+-- window keymaps
+map('n', '<c-h>', '<c-w>h')
+map('n', '<c-j>', '<c-w>j')
+map('n', '<c-k>', '<c-w>k')
+map('n', '<c-l>', '<c-w>l')
+
+-- map auto-closing character pairs
+local char_pairs = {
+  ['\''] = '\'',
+  ['\"'] = '\"',
+  ['('] = ')',
+  ['{'] = '}',
+  ['['] = ']'
 }
 
-local insert_keymaps = {
-  -- general keymaps
-  ['<c-s>'] = '<cmd>w<CR>',
-  ['<c-z>'] = '<Esc>ua',
+for open_char, close_char in pairs(char_pairs) do
+  map('i', open_char, open_char .. close_char .. '<left>', {})
+  map('i', close_char, function()
+    local next_char = cursor.get_char()
+    if (next_char and next_char == close_char) then
+      return '<right>'
+    end
 
-  -- auto-close mappings
-  ['\''] = '\'\'<Left>',
-  ['\"'] = '\"\"<Left>',
-  ['['] = '[]<Left>',
-  ['('] = '()<Left>',
-  ['{'] = '{}<Left>'
-}
-
--- apply keymaps
-local options = { noremap = true }
-
-for keymap, target in pairs(normal_keymaps) do
-  vim.api.nvim_set_keymap('n', keymap, target, options)
-end
-
-for keymap, target in pairs(insert_keymaps) do
-  vim.api.nvim_set_keymap('i', keymap, target, options)
+    return close_char
+  end, { expr = true })
 end
