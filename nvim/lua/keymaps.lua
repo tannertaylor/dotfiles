@@ -1,6 +1,7 @@
 -- imports
 require('util.string')
 require('util.cursor')
+require('util.table')
 
 -- aliases
 local map = vim.keymap.set
@@ -36,3 +37,12 @@ for open_char, close_char in pairs(char_pairs) do
     return close_char
   end, { expr = true })
 end
+
+map('i', '<tab>', function()
+  local next_char = cursor.get_char()
+  if (next_char and table.has_value(char_pairs, next_char)) then
+    return '<right>'
+  end
+
+  return '<tab>'
+end, { expr = true })
