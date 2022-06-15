@@ -14,7 +14,14 @@ local normal_keymaps = {
 local insert_keymaps = {
   -- general keymaps
   ['<c-s>'] = '<cmd>w<CR>',
-  ['<c-z>'] = '<Esc>ua'
+  ['<c-z>'] = '<Esc>ua',
+
+  -- auto-close mappings
+  ['\''] = '\'\'<Left>',
+  ['\"'] = '\"\"<Left>',
+  ['['] = '[]<Left>',
+  ['('] = '()<Left>',
+  ['{'] = '{}<Left>'
 }
 
 -- apply keymaps
