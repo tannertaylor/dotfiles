@@ -1,25 +1,20 @@
-local lua_config = require('lsp.sumneko_lua')
+local ok, lspconfig = pcall(require, 'lspconfig')
+if not ok then
+  return
+end
 
-vim.api.nvim_create_autocmd('FileType', {
-  callback = function(args)
-    local file_type = args.match
-    local buffer_number = args.buffer
+local map = vim.keymap.set
 
-    local language_servers = { }
+local on_attach = function(client, bufnr)
+  map('n', 'gd', vim.lsp.buf.definition)
+end
 
-    local get_client_id = function(language_id, config)
-      if (language_servers[language_id] == nil)
-      then
-        language_servers[language_id] = vim.lsp.start_client(config)
-      end
+lspconfig.util.default_config = vim.tbl_extend(
+  'force',
+  lspconfig.util.default_config,
+  {
+    on_attach = on_attach
+  }
+)
 
-      return language_servers[language_id]
-    end
-
-    if (file_type == 'lua')
-    then
-      local client_id = get_client_id('lua', lua_config)
-      vim.lsp.buf_attach_client(buffer_number, client_id)
-    end
-  end
-})
+require('lsp.sumneko_lua')

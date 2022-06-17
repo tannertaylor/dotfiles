@@ -1,3 +1,8 @@
+local ok, lspconfig = pcall(require, 'lspconfig')
+if not ok then
+  return
+end
+
 local settings = {
   Lua = {
     runtime = {
@@ -24,7 +29,6 @@ if (string.find(vim.fn.getcwd(), '/dotfiles/nvim')) then
   table.insert(settings.Lua.workspace.library, vim.api.nvim_get_runtime_file("", true))
 end
 
-return {
-  cmd = { 'lua-language-server' },
+lspconfig['sumneko_lua'].setup({
   settings = settings
-}
+})
