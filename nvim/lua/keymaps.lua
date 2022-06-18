@@ -10,6 +10,7 @@ local map = vim.keymap.set
 map({ 'n', 'i' }, '<c-s>', '<cmd>w<cr>')
 map('n', '<c-z>', 'u')
 map('i', '<c-z>', '<esc>ua')
+map('n', '<c-_>', '<cmd>CommentToggle<cr>') -- the underscore _ maps to forward slash
 
 -- window keymaps
 map('n', '<c-h>', '<c-w>h')
