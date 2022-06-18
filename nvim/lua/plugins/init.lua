@@ -11,4 +11,7 @@ packer.startup(function(use)
     requires = 'nvim-lua/plenary.nvim'
   })
   use('glepnir/lspsaga.nvim')
+  use('nvim-treesitter/nvim-treesitter')
+
+  require('plugins.treesitter')
 end)
