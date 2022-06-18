@@ -16,6 +16,8 @@ end
 local map = vim.keymap.set
 
 local on_attach = function(client, bufnr)
+  map('n', 'gs', '<cmd>Telescope lsp_workspace_symbols<cr>')
+  map('n', 'gr', '<cmd>Telescope lsp_references<cr>')
   map('n', 'gd', vim.lsp.buf.definition)
   map('n', 'gh', lspsaga_hover.render_hover_doc)
   map('n', 'ca', lspsaga_codeaction.code_action)
@@ -29,5 +31,7 @@ lspconfig.util.default_config = vim.tbl_extend(
   }
 )
 
+lspconfig['csharp_ls'].setup({ })
+
 require('lsp.sumneko_lua')
-require('lsp.omnisharp')
+-- require('lsp.omnisharp')
