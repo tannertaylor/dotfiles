@@ -16,7 +16,9 @@ packer.startup(function(use)
     'kyazdani42/nvim-tree.lua',
     requires = { 'kyazdani42/nvim-web-devicons' }
   })
+  use('terrortylor/nvim-comment')
 
   require('plugins.treesitter')
   require('plugins.nvim-tree')
+  require('plugins.nvim-comment')
 end)
