@@ -18,9 +18,14 @@ packer.startup(function(use)
   })
   use('terrortylor/nvim-comment')
   use('edeneast/nightfox.nvim')
+  use({
+    'nvim-lualine/lualine.nvim',
+    requires = { 'kyazdani42/nvim-web-devicons' }
+  })
 
   require('plugins.treesitter')
   require('plugins.nvim-tree')
   require('plugins.nvim-comment')
   require('plugins.nightfox')
+  require('plugins.lualine')
 end)
