@@ -30,3 +30,4 @@ lspconfig.util.default_config = vim.tbl_extend(
 )
 
 require('lsp.sumneko_lua')
+require('lsp.omnisharp')
