@@ -17,8 +17,10 @@ packer.startup(function(use)
     requires = { 'kyazdani42/nvim-web-devicons' }
   })
   use('terrortylor/nvim-comment')
+  use('edeneast/nightfox.nvim')
 
   require('plugins.treesitter')
   require('plugins.nvim-tree')
   require('plugins.nvim-comment')
+  require('plugins.nightfox')
 end)
