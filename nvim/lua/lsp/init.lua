@@ -13,9 +13,12 @@ if not ok then
   return
 end
 
-local map = vim.keymap.set
-
 local on_attach = function(client, bufnr)
+  vim.lsp.handlers['textDocument/publishDiagnostics'] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
+    update_in_insert = true
+  })
+
+  local map = vim.keymap.set
   map('n', 'gs', '<cmd>Telescope lsp_workspace_symbols<cr>')
   map('n', 'gr', '<cmd>Telescope lsp_references<cr>')
   map('n', 'gd', vim.lsp.buf.definition)
