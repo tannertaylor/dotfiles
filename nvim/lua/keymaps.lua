@@ -20,6 +20,7 @@ map('n', '<c-l>', '<c-w>l')
 
 -- keymaps to plugins
 map('n', '<c-n>', '<cmd>NvimTreeToggle<cr>')
+map('n', 'gf', '<cmd>Telescope find_files<cr>')
 
 -- map auto-closing character pairs
 local char_pairs = {
