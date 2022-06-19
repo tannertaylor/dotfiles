@@ -17,15 +17,16 @@ packer.startup(function(use)
     requires = { 'kyazdani42/nvim-web-devicons' }
   })
   use('terrortylor/nvim-comment')
-  use('edeneast/nightfox.nvim')
   use({
     'nvim-lualine/lualine.nvim',
     requires = { 'kyazdani42/nvim-web-devicons' }
   })
+  use('sainnhe/gruvbox-material')
 
   require('plugins.treesitter')
   require('plugins.nvim-tree')
   require('plugins.nvim-comment')
-  require('plugins.nightfox')
   require('plugins.lualine')
+
+  vim.cmd('colorscheme gruvbox-material')
 end)
