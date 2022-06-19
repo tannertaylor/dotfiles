@@ -1,4 +1,4 @@
-eval "$(oh-my-posh init zsh --config ~/.poshthemes/night-owl.omp.json)"
+eval "$(oh-my-posh init zsh --config ~/.poshthemes/pure.omp.json)"
 
 # Environment variables
 export EDITOR="vim"
