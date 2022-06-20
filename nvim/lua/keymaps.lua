@@ -11,6 +11,7 @@ map({ 'n', 'i' }, '<c-s>', '<cmd>w<cr>')
 map('n', '<c-z>', 'u')
 map('i', '<c-z>', '<esc>ua')
 map('n', '<c-_>', '<cmd>CommentToggle<cr>') -- the underscore maps to forward slash
+map('i', '', '<c-w>')
 
 -- window keymaps
 map('n', '<c-h>', '<c-w>h')
