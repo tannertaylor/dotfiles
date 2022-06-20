@@ -1,4 +1,5 @@
 TODO:
 
-- Open help (:h) in a floating window
-
+- open help (:h) in a floating window
+- completion engine
+- ctrl+backspace
