@@ -2,4 +2,3 @@ TODO:
 
 - open help (:h) in a floating window
 - completion engine
-- ctrl+backspace
