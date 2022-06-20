@@ -5,28 +5,57 @@ end
 
 packer.startup(function(use)
   use('wbthomason/packer.nvim')
+
   use('neovim/nvim-lspconfig')
+
   use({
     'nvim-telescope/telescope.nvim',
     requires = 'nvim-lua/plenary.nvim'
   })
+
   use('glepnir/lspsaga.nvim')
-  use('nvim-treesitter/nvim-treesitter')
+
+  use({
+    'nvim-treesitter/nvim-treesitter',
+    config = function()
+      require('plugins.treesitter')
+    end
+  })
+
   use({
     'kyazdani42/nvim-tree.lua',
-    requires = { 'kyazdani42/nvim-web-devicons' }
+    requires = { 'kyazdani42/nvim-web-devicons' },
+    config = function()
+      require('nvim-tree').setup({ })
+    end
   })
-  use('terrortylor/nvim-comment')
+
+  use({
+    'terrortylor/nvim-comment',
+    config = function()
+      require('nvim_comment').setup({ })
+    end
+  })
+
   use({
     'nvim-lualine/lualine.nvim',
-    requires = { 'kyazdani42/nvim-web-devicons' }
+    requires = { 'kyazdani42/nvim-web-devicons' },
+    config = function()
+      require('lualine').setup({ })
+    end
   })
-  use('sainnhe/gruvbox-material')
 
-  require('plugins.treesitter')
-  require('plugins.nvim-tree')
-  require('plugins.nvim-comment')
-  require('plugins.lualine')
+  use({
+    'sainnhe/gruvbox-material',
+    vim.cmd('colorscheme gruvbox-material')
+  })
 
-  vim.cmd('colorscheme gruvbox-material')
+  use({
+    'akinsho/toggleterm.nvim',
+    config = function()
+      require('toggleterm').setup({
+        direction = 'float'
+      })
+    end
+  })
 end)

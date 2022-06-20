@@ -1,0 +1,4 @@
+TODO:
+
+- Open help (:h) in a floating window
+
