@@ -6,7 +6,12 @@ end
 packer.startup(function(use)
   use('wbthomason/packer.nvim')
 
-  use('neovim/nvim-lspconfig')
+  use({
+    'neovim/nvim-lspconfig',
+    config = function()
+      require('plugins.lspconfig')
+    end
+  })
 
   use({
     'nvim-telescope/telescope.nvim',
