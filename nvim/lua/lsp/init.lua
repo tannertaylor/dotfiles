@@ -34,7 +34,5 @@ lspconfig.util.default_config = vim.tbl_extend(
   }
 )
 
-lspconfig['csharp_ls'].setup({ })
-
 require('lsp.sumneko_lua')
--- require('lsp.omnisharp')
+require('lsp.omnisharp')
