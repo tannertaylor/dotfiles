@@ -1,9 +1,8 @@
-eval "$(oh-my-posh init zsh --config ~/.poshthemes/pure.omp.json)"
+eval "$(oh-my-posh init zsh --config ~/.posh-themes/amro.omp.json)"
 
 # Environment variables
 export EDITOR="vim"
-# export GOPATH="$HOME/code/go"
-export PATH="$PATH:$HOME/.dotnet/tools:/usr/local/go/bin"
+export PATH="$PATH:$HOME/.dotnet/tools:/usr/local/go/bin:/opt/kotlinc/bin"
 
 # Aliases
 alias ll="ls -al"
