@@ -1,4 +1,4 @@
-eval "$(oh-my-posh init zsh --config ~/.posh-themes/amro.omp.json)"
+eval "$(oh-my-posh init zsh --config ~/.poshthemes/ys.omp.json)"
 
 # Environment variables
 export EDITOR="vim"
