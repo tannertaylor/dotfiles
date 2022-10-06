@@ -9,6 +9,7 @@ alias ll="ls -al"
 alias cl="clear"
 alias pwsh="pwsh -nologo"
 alias tf="terraform"
+[ "$TERM" = "xterm-kitty" ] && alias ssh="kitty +kitten ssh"
 
 # Key bindings
 bindkey "^[[3~" delete-char
