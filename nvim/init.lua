@@ -1,5 +1,9 @@
 local utils = require('utils')
 
+-- set globals
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+
 -- set options
 local ok, options = pcall(require, 'options')
 if not ok then
@@ -101,6 +105,20 @@ packer.startup(function(use)
     -- misc plugins
     use({ 'windwp/nvim-autopairs', config = function() require('nvim-autopairs').setup() end })
     use({ 'numToStr/Comment.nvim', config = function() require('Comment').setup() end })
+    use({
+        'nvim-tree/nvim-tree.lua',
+        requires = { 'nvim-tree/nvim-web-devicons' },
+        config = function()
+            require('nvim-tree').setup()
+
+            local api = require('nvim-tree.api')
+            require('utils').map({
+                n = {
+                    ['<Leader>e'] = api.tree.toggle
+                }
+            })
+        end
+    })
 
     if first_install then
         packer.sync()
