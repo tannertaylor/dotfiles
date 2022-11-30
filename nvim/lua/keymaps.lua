@@ -1,66 +1,47 @@
--- imports
-require('util.string')
-require('util.cursor')
-require('util.table')
-
--- aliases
-local map = vim.keymap.set
-
--- general keymaps (e.g., save, undo, redo, etc.)
-map({ 'n', 'i' }, '<c-s>', '<cmd>w<cr>')
-map('n', '<c-z>', 'u')
-map('i', '<c-z>', '<esc>ua')
-map('n', '<c-_>', '<cmd>CommentToggle<cr>') -- the underscore maps to forward slash
-map('i', '', '<c-w>')
-
--- window keymaps
-map('n', '<c-h>', '<c-w>h')
-map('n', '<c-j>', '<c-w>j')
-map('n', '<c-k>', '<c-w>k')
-map('n', '<c-l>', '<c-w>l')
-
--- keymaps to plugins
-map('n', '<c-n>', '<cmd>NvimTreeToggle<cr>')
-map({ 'n', 't' }, '<c-t>', '<cmd>ToggleTerm<cr>')
-map('n', 'gf', '<cmd>Telescope find_files<cr>')
-
--- map auto-closing character pairs
-local char_pairs = {
-  ['\''] = '\'',
-  ['\"'] = '\"',
-  ['('] = ')',
-  ['{'] = '}',
-  ['['] = ']'
-}
-
-for open_char, close_char in pairs(char_pairs) do
-  if (open_char == close_char) then
-    map('i', open_char, function()
-      local next_char = cursor.get_char()
-      if (next_char and next_char == close_char) then
-        return '<right>'
-      end
-
-      return open_char .. close_char .. '<left>'
-    end, { expr = true })
-  else
-    map('i', open_char, open_char .. close_char .. '<left>', {})
-    map('i', close_char, function()
-      local next_char = cursor.get_char()
-      if (next_char and next_char == close_char) then
-        return '<right>'
-      end
-
-      return close_char
-    end, { expr = true })
-  end
+local function map(mode, source, target)
+    vim.keymap.set(mode, source, target, { silent = true })
 end
 
-map('i', '<tab>', function()
-  local next_char = cursor.get_char()
-  if (next_char and table.has_value(char_pairs, next_char)) then
-    return '<right>'
-  end
+-- leader key
+vim.g.mapleader = ' '
+vim.g.maplocalleader = ' '
+map('', '<Space>', '<Nop>')
 
-  return '<tab>'
-end, { expr = true })
+-- [NORMAL]
+-- window navigation
+map('n', '<C-h>', '<C-w>h')
+map('n', '<C-j>', '<C-w>j')
+map('n', '<C-k>', '<C-w>k')
+map('n', '<C-l>', '<C-w>l')
+
+-- explorer
+map('n', '<Leader>e', ':Lex 20<CR>')
+
+-- resizing
+map('n', '<C-Up>', ':resize +2<CR>')
+map('n', '<C-Down>', ':resize -2<CR>')
+map('n', '<C-Left>', ':vertical resize +2<CR>')
+map('n', '<C-Right>', ':vertical resize -2<CR>')
+
+-- moving text
+map('n', '<A-j>', ':move .+1<CR>==')
+map('n', '<A-k>', ':move .-2<CR>==')
+
+-- telescope
+--map('n', 'gf', ':Telescope find_files<CR>')
+--map('n', 'ga', ':Telescope live_grep<CR>')
+--map('n', 'gh', ':Telescope help_tags<CR>')
+
+-- [INSERT]
+-- switch to normal mode
+map('i', 'jk', '<Esc>')
+
+-- [VISUAL]
+-- stay in 'tab' mode
+map('v', '<Tab>', '>gv')
+map('v', '<S-Tab>', '<gv')
+map('v', 'p', '"_dP') -- when putting text, don't yank the current text, delete it (into a register) and THEN put
+
+-- moving text
+map('v', '<A-j>', ':move \'>+1<CR>gv=gv')
+map('v', '<A-k>', ':move \'<-2<CR>gv=gv')

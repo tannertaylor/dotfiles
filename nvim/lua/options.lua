@@ -1,35 +1,44 @@
--- define options
-local tab_width = 2
-local buffer_options = {
-  ['tabstop'] = tab_width,
-  ['shiftwidth'] = tab_width,
-  ['expandtab'] = true,
-  ['omnifunc'] = 'v:lua.vim.lsp.omnifunc'
+return {
+    -- tabs
+    tabstop = 4,
+    softtabstop = 4,
+    shiftwidth = 4,
+    expandtab = true,
+
+    -- look & feel
+    cmdheight = 2,
+    pumheight = 10,
+    showmode = false,
+    number = true,
+    relativenumber = true,
+    numberwidth = 6,
+    signcolumn = 'yes',
+    wrap = true,
+    linebreak = true,
+    breakindent = true,
+    breakindentopt = 'shift:4',
+    scrolloff = 4,
+
+    -- search
+    hlsearch = true,
+    ignorecase = true,
+    smartcase = true,
+
+    -- workflow
+    completeopt = { 'menuone', 'noselect' },
+    mouse = 'a',
+    smartindent = true,
+    splitbelow = true,
+    splitright = true,
+    undofile = true,
+    updatetime = 300,
+
+    -- files
+    backup = false,
+    fileencoding = 'utf-8',
+    swapfile = false,
+    writebackup = false,
+
+    -- integrations
+    clipboard = 'unnamedplus'
 }
-
-local window_options = {
-  ['number'] = true,
-  ['relativenumber'] = true
-}
-
-local global_options = {
-  ['splitbelow'] = true,
-  ['splitright'] = true
-}
-
--- apply options
-vim.api.nvim_create_autocmd('BufEnter', {
-  callback = function(args)
-    for option, value in pairs(buffer_options) do
-      vim.api.nvim_buf_set_option(args.buf, option, value)
-    end
-  end
-})
-
-for option, value in pairs(window_options) do
-  vim.api.nvim_win_set_option(0, option, value)
-end
-
-for option, value in pairs(global_options) do
-  vim.api.nvim_set_option(option, value)
-end
