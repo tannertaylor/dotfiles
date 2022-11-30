@@ -1,13 +1,11 @@
 local M = { }
 
--- message logging functions
 M.log = {
     error = function(message)
         vim.notify(message, vim.log.levels.ERROR)
     end
 }
 
--- packer
 M.packer = {
     ensure_installed = function()
         local install_path = vim.fn.stdpath('data') .. '/site/pack/packer/start/packer.nvim'
@@ -22,17 +20,12 @@ M.packer = {
     end
 }
 
--- keymaps
-local function modemap(mode, keymaps)
-    for lhs, rhs in pairs(keymaps) do
-        vim.keymap.set(mode, lhs, rhs, { silent = true })
-    end
-end
-
 M.map = function(keymaps)
     for _, mode in ipairs({ 'n', 'i', 'v' }) do
         if keymaps[mode] ~= nil then
-            modemap(mode, keymaps[mode])
+            for lhs, rhs in pairs(keymaps[mode]) do
+                vim.keymap.set(mode, lhs, rhs, { silent = true })
+            end
         end
     end
 end

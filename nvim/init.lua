@@ -104,7 +104,23 @@ packer.startup(function(use)
 
     -- misc plugins
     use({ 'windwp/nvim-autopairs', config = function() require('nvim-autopairs').setup() end })
-    use({ 'numToStr/Comment.nvim', config = function() require('Comment').setup() end })
+    use({
+        'numToStr/Comment.nvim',
+        config = function()
+            require('Comment').setup()
+
+            local api = require('Comment.api')
+            require('utils').map({
+                n = {
+                    ['<Leader>cc'] = api.toggle.linewise.current
+                },
+                -- TODO: Fix this broken keymap
+                v = {
+                    ['<Leader>cc'] = api.toggle.blockwise.count
+                }
+            })
+        end
+    })
     use({
         'nvim-tree/nvim-tree.lua',
         requires = { 'nvim-tree/nvim-web-devicons' },
