@@ -102,8 +102,10 @@ packer.startup(function(use)
         end
     })
 
-    -- misc plugins
+    -- autopairs
     use({ 'windwp/nvim-autopairs', config = function() require('nvim-autopairs').setup() end })
+
+    -- comments
     use({
         'numToStr/Comment.nvim',
         config = function()
@@ -121,6 +123,8 @@ packer.startup(function(use)
             })
         end
     })
+
+    -- file explorer
     use({
         'nvim-tree/nvim-tree.lua',
         requires = { 'nvim-tree/nvim-web-devicons' },
@@ -134,6 +138,12 @@ packer.startup(function(use)
                 }
             })
         end
+    })
+
+    -- gitsigns
+    use({
+        'lewis6991/gitsigns.nvim',
+        config = function() require('gitsigns').setup() end
     })
 
     if first_install then
