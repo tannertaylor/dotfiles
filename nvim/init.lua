@@ -24,6 +24,18 @@ if not ok then
     return
 end
 
+-- set up autocmd to sync/compile when this file is saved
+local initFile = vim.fn.expand('~/**/nvim/init.lua')
+vim.api.nvim_create_autocmd('BufWritePost', {
+    group = vim.api.nvim_create_augroup('PackerResync', { clear = true }),
+    pattern = initFile,
+    callback = function(data)
+        dofile(initFile)
+        packer.sync()
+    end
+})
+
+-- packer set-up
 packer.reset()
 packer.init({
     display = {
@@ -48,6 +60,9 @@ packer.startup(function(use)
             vim.cmd('colorscheme darkplus')
         end
     })
+
+    -- custom modes
+    use('Iron-E/nvim-libmodal')
 
     -- completion
     use('hrsh7th/nvim-cmp')
@@ -144,6 +159,32 @@ packer.startup(function(use)
     use({
         'lewis6991/gitsigns.nvim',
         config = function() require('gitsigns').setup() end
+    })
+
+    -- bufferline
+    use({
+        'akinsho/bufferline.nvim',
+        requires = 'nvim-tree/nvim-web-devicons',
+        config = function()
+            require('bufferline').setup({
+                options = {
+                    offsets = {
+                        {
+                            filetype = 'NvimTree',
+                            text = 'File Explorer',
+                            text_align = 'center'
+                        }
+                    }
+                }
+            })
+
+            require('utils').map({
+                -- n = {
+                    -- ['<Leader>h'] = ':BufferLineCyclePrev<CR>',
+                    -- ['<Leader>l'] = ':BufferLineCycleNext<CR>'
+                -- }
+            })
+        end
     })
 
     if first_install then
