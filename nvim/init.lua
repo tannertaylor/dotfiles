@@ -203,6 +203,14 @@ packer.startup(function(use)
         end
     })
 
+    -- tabout
+    use({
+        'abecodes/tabout.nvim',
+        config = function()
+            require('tabout').setup()
+        end
+    })
+
     if first_install then
         packer.sync()
     end
