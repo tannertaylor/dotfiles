@@ -187,6 +187,22 @@ packer.startup(function(use)
         end
     })
 
+    -- toggleterm
+    use({
+        'akinsho/toggleterm.nvim',
+        config = function()
+            require('toggleterm').setup({
+                direction = 'float'
+            })
+
+            require('utils').map({
+                n = {
+                    ['<Leader>t'] = ':ToggleTerm<CR>'
+                }
+            })
+        end
+    })
+
     if first_install then
         packer.sync()
     end
