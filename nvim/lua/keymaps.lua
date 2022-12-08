@@ -36,6 +36,9 @@ map('n', '<A-k>', ':move .-2<CR>==')
 -- switch to normal mode
 map('i', 'jk', '<Esc>')
 
+-- delete previous word
+map('i', '<C-BS>', '<C-W>')
+
 -- [VISUAL]
 -- stay in 'tab' mode
 map('v', '<Tab>', '>gv')

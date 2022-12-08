@@ -32,6 +32,7 @@ return {
     splitright = true,
     undofile = true,
     updatetime = 300,
+    backspace = 'indent,eol,start',
 
     -- files
     backup = false,
