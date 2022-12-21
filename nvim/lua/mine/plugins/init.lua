@@ -127,11 +127,17 @@ packer.startup(function(use)
     })
 
     -- file explorer
-    use({
-        'nvim-tree/nvim-tree.lua',
+    use({ 'nvim-tree/nvim-tree.lua',
         requires = { 'nvim-tree/nvim-web-devicons' },
         config = function()
-            require('nvim-tree').setup()
+            require('nvim-tree').setup({
+                on_attach = function(bufnr)
+                    vim.keymap.set('n', 'V', function()
+                        local api = require('nvim-tree.api')
+                        api.node.open.vertical()
+                    end, { buffer = bufnr })
+                end
+            })
 
             local api = require('nvim-tree.api')
             require('mine.utils.mapper').map({
