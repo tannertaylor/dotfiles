@@ -1,4 +1,4 @@
-return {
+local options = {
     -- tabs
     tabstop = 4,
     softtabstop = 4,
@@ -43,3 +43,7 @@ return {
     -- integrations
     clipboard = 'unnamedplus'
 }
+
+for key, value in pairs(options) do
+    vim.opt[key] = value
+end

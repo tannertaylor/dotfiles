@@ -18,7 +18,7 @@ if not ok then
     return
 end
 
-local ok, keymaps = pcall(require, 'lsp.keymaps')
+local ok, keymaps = pcall(require, 'mine.lsp.keymaps')
 if not ok then
     return
 end
@@ -43,7 +43,7 @@ local options = {
 }
 
 for _, server in ipairs(servers) do
-    local ok, specific_options = pcall(require, 'lsp.options.' .. server)
+    local ok, specific_options = pcall(require, 'mine.lsp.options.' .. server)
     if ok then
         options = vim.tbl_deep_extend('force', specific_options, options)
     end

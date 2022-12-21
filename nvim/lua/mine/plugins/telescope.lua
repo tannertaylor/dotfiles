@@ -1,9 +1,10 @@
 local M = { }
+M.keymaps = { }
 
 local actions = require('telescope.actions')
 local builtin = require('telescope.builtin')
 
-M.prompt_window = {
+M.keymaps.prompt_window = {
     i = {
         ['<C-n>'] = actions.cycle_history_next,
         ['<C-p>'] = actions.cycle_history_prev,
@@ -13,7 +14,7 @@ M.prompt_window = {
     }
 }
 
-M.general = {
+M.keymaps.general = {
     n = {
         ['gf'] = builtin.find_files, --builtin.find_files,
         ['ga'] = builtin.live_grep,
