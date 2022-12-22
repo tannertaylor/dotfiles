@@ -204,6 +204,14 @@ packer.startup(function(use)
         end
     })
 
+    -- status line
+    use({
+        'nvim-lualine/lualine.nvim',
+        config = function()
+            require('lualine').setup()
+        end
+    })
+
     if first_install then
         packer.sync()
     end
