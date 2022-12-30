@@ -1,23 +1,4 @@
 packer.startup(function(use)
-    -- comments
-    use({
-        'numToStr/Comment.nvim',
-        config = function()
-            require('Comment').setup()
-
-            local api = require('Comment.api')
-            require('mine.utils.mapper').map({
-                n = {
-                    ['<Leader>cc'] = api.toggle.linewise.current
-                },
-                -- TODO: Fix this broken keymap
-                v = {
-                    ['<Leader>cc'] = api.toggle.blockwise.count
-                }
-            })
-        end
-    })
-
     -- bufferline
     use({
         'akinsho/bufferline.nvim',
