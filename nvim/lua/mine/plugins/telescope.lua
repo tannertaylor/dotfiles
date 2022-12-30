@@ -22,6 +22,7 @@ return {
     keys = {
         { 'gf', ':Telescope find_files<CR>' },
         { 'ga', ':Telescope live_grep<CR>' },
-        { 'g?', ':Telescope help_tags<CR>' }
+        { 'g?', ':Telescope help_tags<CR>' },
+        { 'gb', ':Telescope buffers<CR>' }
     }
 }
