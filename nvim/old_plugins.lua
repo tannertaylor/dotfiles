@@ -24,20 +24,4 @@ packer.startup(function(use)
             })
         end
     })
-
-    -- toggleterm
-    use({
-        'akinsho/toggleterm.nvim',
-        config = function()
-            require('toggleterm').setup({
-                direction = 'float'
-            })
-
-            require('mine.utils.mapper').map({
-                n = {
-                    ['<Leader>t'] = ':ToggleTerm<CR>'
-                }
-            })
-        end
-    })
 end)
