@@ -16,3 +16,8 @@ style = "Bold Italic"
 [font.italic]
 family = "RobotMono Nerd Font"
 style = "Italic"
+
+[keyboard]
+bindings = [
+    { key = "Back", mods = "Control", chars = "\u0017" }
+]
