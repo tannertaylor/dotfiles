@@ -9,6 +9,9 @@ return {
       "lua",
       "vim",
       "jsonc",
+      "yaml",
+      "rust",
+      "dockerfile",
     })
   end,
 }

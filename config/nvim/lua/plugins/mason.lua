@@ -11,6 +11,7 @@ return {
         "rust_analyzer",
         "jsonls",
         "dockerls",
+        "yamlls",
       })
     end,
   },
