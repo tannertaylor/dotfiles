@@ -15,4 +15,5 @@ compinit
 eval "$(starship init zsh)"
 
 # Aliases
-alias ll=ls -al
+alias ll="ls -al"
+alias dc="docker compose"
