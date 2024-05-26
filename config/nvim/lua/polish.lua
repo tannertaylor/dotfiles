@@ -8,3 +8,10 @@ vim.opt.breakindentopt = {
   sbr = true,
 }
 vim.opt.showbreak = ">>"
+
+-- filetypes
+vim.filetype.add {
+  pattern = {
+    [".*/Dockerfile.*"] = "dockerfile",
+  },
+}
