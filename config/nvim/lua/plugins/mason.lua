@@ -14,6 +14,8 @@ return {
         "prettier",
         "stylua",
         "gopls",
+        "html-lsp",
+        "htmx-lsp",
       },
     },
   },
