@@ -9,7 +9,7 @@ return {
     -- vim options can be configured here
     options = {
       opt = {
-        shell = "/usr/bin/zsh"
+        shell = "/usr/bin/zsh",
         wrap = true,
         breakindent = true,
         breakindentopt = {
