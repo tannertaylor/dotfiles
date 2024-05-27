@@ -12,6 +12,10 @@ return {
       "yaml",
       "rust",
       "dockerfile",
+      "html",
+      "go",
+      "typescript",
+      "javascript",
     })
   end,
 }
