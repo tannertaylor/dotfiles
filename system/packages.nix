@@ -1,17 +1,22 @@
-{ config, pkgs, ... }: {
+{ pkgs, ... }: {
   environment.systemPackages = with pkgs; [
-    neovim
-    git
-    wget
-    alacritty
-    google-chrome
-    home-manager
-    lazygit
-    dotnet-sdk_8
-    omnisharp-roslyn
+    # Utilities
+    alacritty wget home-manager ripgrep
+
+    # Shell
     starship
-    docker
-    docker-compose
-    ripgrep
+
+    # Productivity
+    google-chrome
+
+    # Dev
+    neovim git lazygit dotnet-sdk_8
+
+    # Virtualization
+    docker docker-compose
+
+    # Language Servers
+    omnisharp-roslyn # C#
+    nil # Nix
   ];
 }
