@@ -1,4 +1,4 @@
-{ ... }@inputs: let exampleVariable = 2; in {
+{ ... }@inputs: {
   imports = [
     ./keymaps.nix
   ];
