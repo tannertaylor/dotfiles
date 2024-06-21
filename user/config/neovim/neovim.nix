@@ -15,6 +15,12 @@
       mapleader = " ";
     };
 
+    opts = {
+      number = true;
+      relativenumber = true;
+      statuscolumn = "%C %s %=%l %=%r ";
+    };
+
     plugins = {}
       // (import plugins/cmp.nix inputs)
       // (import plugins/lsp.nix inputs)
