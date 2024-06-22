@@ -9,7 +9,7 @@
     viAlias = true;
     vimAlias = true;
 
-    colorschemes.cyberdream.enable = true;
+    colorschemes.ayu.enable = true;
 
     globals = {
       mapleader = " ";
