@@ -7,7 +7,7 @@
     kitty alacritty starship
 
     # Productivity
-    google-chrome
+    firefox
 
     # Dev
     neovim git lazygit
