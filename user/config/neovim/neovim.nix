@@ -43,6 +43,7 @@
       // (import plugins/cmp.nix inputs)
       // (import plugins/lsp.nix inputs)
       // (import plugins/telescope.nix inputs)
+      // (import plugins/toggleterm.nix inputs)
       // (import plugins/treesitter.nix inputs)
     ;
 
