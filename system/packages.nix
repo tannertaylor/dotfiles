@@ -10,13 +10,9 @@
     google-chrome
 
     # Dev
-    neovim git lazygit dotnet-sdk_8
+    neovim git lazygit
 
     # Virtualization
     docker docker-compose
-
-    # Language Servers
-    omnisharp-roslyn # C#
-    nil # Nix
   ];
 }
