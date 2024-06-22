@@ -15,10 +15,26 @@
       mapleader = " ";
     };
 
-    opts = {
+    opts = let
+      tabSize = 4;
+    in {
       number = true;
       relativenumber = true;
-      statuscolumn = "%C %s %=%l %=%r ";
+      statuscolumn = "%C %s %=%l %=%r "; # set format of left-hand status column
+      clipboard = "unnamedplus"; # use the system clipboard
+      cmdheight = 2; # taller command line window
+      ignorecase = true; # ignore case in searches
+      showtabline = tabSize;
+      splitbelow = true;
+      splitright = true;
+      swapfile = false;
+      termguicolors = true;
+      expandtab = true;
+      shiftwidth = tabSize;
+      tabstop = tabSize;
+      cursorline = true;
+      signcolumn = "yes";
+      scrolloff = 4;
     };
 
     plugins = {}
