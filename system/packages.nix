@@ -1,10 +1,10 @@
 { pkgs, ... }: {
   environment.systemPackages = with pkgs; [
     # Utilities
-    alacritty wget home-manager ripgrep
+    wget home-manager ripgrep
 
     # Shell
-    starship
+    kitty alacritty starship
 
     # Productivity
     google-chrome
