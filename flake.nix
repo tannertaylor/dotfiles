@@ -15,14 +15,14 @@
   let
     system = "x86_64-linux";
   in {
-    nixosConfigurations.nixosvm = nixpkgs.lib.nixosSystem {
+    nixosConfigurations.thinkpadt15 = nixpkgs.lib.nixosSystem {
       inherit system;
       modules = [
       	system/configuration.nix
       ];
       specialArgs = {
         inherit inputs;
-        hostname = "nixosvm";
+        hostname = "thinkpadt15";
       };
     };
 

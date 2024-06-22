@@ -2,7 +2,7 @@
 
 {
   imports = [ 
-    ./nixosvm-hardware-configuration.nix
+    ./thinkpadt15-hardware-configuration.nix
     ./packages.nix
     ./services.nix
   ];
