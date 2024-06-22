@@ -37,7 +37,9 @@
       scrolloff = 4;
     };
 
-    plugins = {}
+    plugins = {
+      lualine.enable = true;
+    }
       // (import plugins/cmp.nix inputs)
       // (import plugins/lsp.nix inputs)
       // (import plugins/telescope.nix inputs)
