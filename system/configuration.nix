@@ -3,6 +3,7 @@
 {
   imports = [ 
     ./thinkpadt15-hardware-configuration.nix
+    ./fonts.nix
     ./packages.nix
     ./services.nix
   ];
@@ -66,7 +67,6 @@
     packages = with pkgs; [
     ];
   };
-
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

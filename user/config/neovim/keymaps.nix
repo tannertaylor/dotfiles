@@ -8,10 +8,18 @@
       { key = "<Leader>tt"; action = "<cmd>ToggleTerm<CR>"; }
     ];
 
+    i = [
+      { key = "<C-BS>"; action = "<C-w>"; }
+    ];
+
     t = [
       { key = "<C-j>"; action = "<cmd>ToggleTerm<CR>"; }
     ];
   };
 in {
-  programs.nixvim.keymaps = map (keymap: keymap // { mode = [ "n" ]; }) keymaps.n;
+  programs.nixvim.keymaps =
+    map (keymap: keymap // { mode = [ "n" ]; }) keymaps.n ++
+    map (keymap: keymap // { mode = [ "i" ]; }) keymaps.i ++
+    map (keymap: keymap // { mode = [ "t" ]; }) keymaps.t
+  ;
 }
