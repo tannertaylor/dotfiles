@@ -4,6 +4,7 @@
     config/bash/bash.nix
     config/git/git.nix
     config/neovim/neovim.nix
+    config/tmux/tmux.nix
   ];
 
   home = {

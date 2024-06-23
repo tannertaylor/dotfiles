@@ -4,7 +4,7 @@
     wget home-manager ripgrep
 
     # Shell
-    kitty alacritty starship
+    kitty tmux starship
 
     # Productivity
     firefox
