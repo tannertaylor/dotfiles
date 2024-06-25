@@ -10,6 +10,7 @@
 
     i = [
       { key = "<C-BS>"; action = "<C-w>"; }
+      { key = "<C-h>"; action = "<C-w>"; }
     ];
 
     t = [
