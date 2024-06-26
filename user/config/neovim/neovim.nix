@@ -38,6 +38,7 @@
     };
 
     plugins = {
+      nvim-autopairs.enable = true;
       lualine.enable = true;
     }
       // (import plugins/cmp.nix inputs)
