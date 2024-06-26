@@ -11,7 +11,8 @@
     };
 
     bashrcExtra = ''
-      eval $(starship init bash)
+      eval "$(starship init bash)"
+      eval "$(zoxide init bash)"
       stty werase '^h' # Set ctrl+backspace (^h) to erase previous word in TTY settings.
     '';
   };

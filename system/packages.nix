@@ -1,7 +1,7 @@
 { pkgs, ... }: {
   environment.systemPackages = with pkgs; [
     # Utilities
-    wget home-manager ripgrep kdePackages.kcalc
+    wget home-manager ripgrep kdePackages.kcalc zoxide fzf
 
     # Shell
     kitty tmux starship
