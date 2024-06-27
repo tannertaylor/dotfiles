@@ -40,6 +40,7 @@
     plugins = {
       nvim-autopairs.enable = true;
       lualine.enable = true;
+      oil.enable = true;
     }
       // (import plugins/cmp.nix inputs)
       // (import plugins/lsp.nix inputs)

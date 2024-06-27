@@ -6,6 +6,7 @@
       { key = "<Leader>ff"; action = "<cmd>Telescope find_files<CR>"; }
       { key = "<Leader>fa"; action = "<cmd>Telescope live_grep<CR>"; }
       { key = "<Leader>tt"; action = "<cmd>ToggleTerm<CR>"; }
+      { key = "<Leader>o"; action = "<cmd>Oil<CR>"; }
     ];
 
     i = [
