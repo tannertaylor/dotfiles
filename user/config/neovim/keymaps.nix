@@ -3,10 +3,17 @@
     n = [
       { key = "<Space>"; action = "<Noop>"; }
       { key = "<Leader>e"; action = ":Telescope file_browser<CR>"; }
-      { key = "<Leader>ff"; action = ":Telescope find_files<CR>"; }
-      { key = "<Leader>fa"; action = ":Telescope live_grep<CR>"; }
-      { key = "<Leader>tt"; action = ":ToggleTerm<CR>"; }
       { key = "<Leader>o"; action = ":Oil<CR>"; }
+      { key = "<Leader>."; action = ":lua vim.lsp.buf.code_action()<CR>"; }
+      { key = "<Leader>h"; action = ":lua vim.lsp.buf.hover()<CR>"; }
+      { key = "<Leader>fa"; action = ":Telescope live_grep<CR>"; }
+      { key = "<Leader>ff"; action = ":Telescope find_files<CR>"; }
+      { key = "<Leader>fh"; action = ":Telescope help_tags<CR>"; }
+      { key = "<Leader>fi"; action = ":Telescope lsp_implementations<CR>"; }
+      { key = "<Leader>fs"; action = ":Telescope lsp_workspace_symbols<CR>"; }
+      { key = "<Leader>gd"; action = ":lua vim.lsp.buf.definition()<CR>"; }
+      { key = "<Leader>gr"; action = ":Telescope lsp_references<CR>"; }
+      { key = "<Leader>tt"; action = ":ToggleTerm<CR>"; }
       { key = "<A-j>"; action = ":m +1<CR>=="; }
       { key = "<A-k>"; action = ":m -2<CR>=="; }
     ];
@@ -22,7 +29,7 @@
     ];
 
     t = [
-      { key = "<C-j>"; action = ":ToggleTerm<CR>"; }
+      { key = "<C-j>"; action = "<cmd>ToggleTerm<CR>"; }
     ];
   };
 in {

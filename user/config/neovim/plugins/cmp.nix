@@ -1,5 +1,5 @@
 { ... }: let
-  sources = [ "nvim_lsp" "buffer" "calc" "path" ];
+  sources = [ "nvim_lsp" "buffer" "calc" "path" "nvim_lsp_signature_help" ];
 in {
   cmp.enable = true;
   cmp.settings.sources = map (source: { name = source; }) sources;
