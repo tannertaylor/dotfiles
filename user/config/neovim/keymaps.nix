@@ -7,6 +7,8 @@
       { key = "<Leader>."; action = ":lua vim.lsp.buf.code_action()<CR>"; }
       { key = "<Leader>h"; action = ":lua vim.lsp.buf.hover()<CR>"; }
       { key = "<Leader>fa"; action = ":Telescope live_grep<CR>"; }
+      { key = "<Leader>fb"; action = ":Telescope buffers<CR>"; }
+      { key = "<Leader>fd"; action = ":Telescope diagnostics<CR>"; }
       { key = "<Leader>ff"; action = ":Telescope find_files<CR>"; }
       { key = "<Leader>fh"; action = ":Telescope help_tags<CR>"; }
       { key = "<Leader>fi"; action = ":Telescope lsp_implementations<CR>"; }
