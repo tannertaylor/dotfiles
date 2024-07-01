@@ -1,0 +1,5 @@
+{ ... }: {
+  bufferline = {
+    enable = true;
+  };
+}

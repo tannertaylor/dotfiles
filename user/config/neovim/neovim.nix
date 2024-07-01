@@ -1,4 +1,4 @@
-{ ... }@inputs: {
+{ pkgs, ... }@inputs: {
   imports = [
     ./keymaps.nix
   ];
@@ -39,16 +39,20 @@
 
     plugins = {
       nvim-autopairs.enable = true;
+      lspsaga.enable = true;
       lualine.enable = true;
       oil.enable = true;
     }
+      // (import plugins/bufferline.nix inputs)
       // (import plugins/cmp.nix inputs)
       // (import plugins/lsp.nix inputs)
+      // (import plugins/lspsaga.nix inputs)
       // (import plugins/telescope.nix inputs)
       // (import plugins/toggleterm.nix inputs)
       // (import plugins/treesitter.nix inputs)
     ;
 
+    extraPlugins = [ pkgs.vimPlugins.omnisharp-extended-lsp-nvim ];
     extraConfigLua = "vim.diagnostic.config({ update_in_insert = true })";
   };
 }
