@@ -4,7 +4,7 @@ in {
   cmp.enable = true;
   cmp.settings.sources = map (source: { name = source; }) sources;
   cmp.settings.mapping = {
-    "<CR>" = "cmp.mapping.confirm({ select = true })";
+    "<CR>" = "cmp.mapping.confirm({ select = false })";
     "<Tab>" = "cmp.mapping.confirm({ select = true })";
     "<C-j>" = "cmp.mapping.select_next_item()";
     "<C-k>" = "cmp.mapping.select_prev_item()";
