@@ -21,6 +21,11 @@
           };
         };
       };
+      rust-analyzer = {
+        enable = true;
+        installCargo = false;
+        installRustc = false;
+      };
       terraformls.enable = true;
       tsserver.enable = true;
       yamlls.enable = true;
