@@ -10,13 +10,7 @@ in {
     "<C-k>" = "cmp.mapping.select_prev_item()";
   };
 
-  # Sources
-  # cmp-nvim-lsp.enable = true;
-  # cmp-async-path.enable = true;
-  # cmp-buffer.enable = true;
-  # cmp-calc.enable = true;
-
   # Snippet Engine
-  # luasnip.enable = true;
-  # cmp.settings.snippet.expand = "function(args) require('luasnip').lsp_expand(args.body) end";
+  luasnip.enable = true;
+  cmp.settings.snippet.expand = "function(args) require('luasnip').lsp_expand(args.body) end";
 }
