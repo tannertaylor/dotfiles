@@ -4,13 +4,21 @@
       { key = "<Space>"; action = "<Noop>"; }
 
       # File and directory browsing
-      { key = "<Leader>e"; action = ":Telescope file_browser<CR>"; }
+      { key = "<Leader>e"; action = ":NvimTreeToggle<CR>"; }
       { key = "<Leader>o"; action = ":Oil<CR>"; }
 
+      # Switch panes
+      { key = "<C-h>"; action = "<C-w>h"; }
+      { key = "<C-j>"; action = "<C-w>j"; }
+      { key = "<C-k>"; action = "<C-w>k"; }
+      { key = "<C-l>"; action = "<C-w>l"; }
+
       # LSP actions
-      { key = "<Leader>."; action = ":Lspsaga code_action<CR>"; }
-      { key = "<Leader>h"; action = ":Lspsaga hover_doc<CR>"; }
-      { key = "<Leader>r"; action = ":Lspsaga rename<CR>"; }
+      { key = "<Leader>la"; action = ":Lspsaga code_action<CR>"; }
+      { key = "<Leader>ld"; action = ":Lspsaga show_line_diagnostics<CR>"; }
+      { key = "<Leader>lh"; action = ":Lspsaga hover_doc<CR>"; }
+      { key = "<Leader>lo"; action = ":Lspsaga outline<CR>"; }
+      { key = "<Leader>lr"; action = ":Lspsaga rename<CR>"; }
 
       # Moving lines
       { key = "<A-j>"; action = ":m +1<CR>=="; }

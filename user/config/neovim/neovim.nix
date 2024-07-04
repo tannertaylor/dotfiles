@@ -41,6 +41,7 @@
       nvim-autopairs.enable = true;
       lspsaga.enable = true;
       lualine.enable = true;
+      nvim-tree.enable = true;
       oil.enable = true;
     }
       // (import plugins/bufferline.nix inputs)
