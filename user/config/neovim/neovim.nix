@@ -16,7 +16,7 @@
     };
 
     opts = let
-      tabSize = 4;
+      tabSize = 2;
     in {
       number = true;
       relativenumber = true;
