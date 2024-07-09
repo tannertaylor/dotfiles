@@ -1,7 +1,7 @@
 { pkgs, ... }: {
   environment.systemPackages = with pkgs; [
     # Utilities
-    wget home-manager ripgrep zoxide fzf
+    wget home-manager ripgrep zoxide fzf jq usbutils
 
     # Shell
     kitty tmux starship
@@ -16,6 +16,9 @@
     docker docker-compose
 
     # Desktop
-    kdePackages.kcalc
+    kdePackages.kcalc remmina
+
+    # Work
+    slack
   ];
 }

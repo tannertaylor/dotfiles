@@ -9,7 +9,7 @@
     viAlias = true;
     vimAlias = true;
 
-    colorschemes.ayu.enable = true;
+    colorschemes.gruvbox.enable = true;
 
     globals = {
       mapleader = " ";
