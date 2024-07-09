@@ -46,6 +46,7 @@
     }
       // (import plugins/bufferline.nix inputs)
       // (import plugins/cmp.nix inputs)
+      // (import plugins/comment.nix inputs)
       // (import plugins/dap.nix inputs)
       // (import plugins/lsp.nix inputs)
       // (import plugins/lspsaga.nix inputs)

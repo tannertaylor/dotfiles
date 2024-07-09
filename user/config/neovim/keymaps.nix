@@ -31,6 +31,8 @@
       { key = "<Leader>bn"; action = ":BufferLineCycleNext<CR>"; }
       { key = "<Leader>bp"; action = ":BufferLineCyclePrev<CR>"; }
 
+      # c = Comments | set in comment.nix
+
       # d = Debug
 
       # f = Find
