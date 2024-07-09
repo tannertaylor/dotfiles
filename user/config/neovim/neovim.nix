@@ -43,6 +43,7 @@
       lualine.enable = true;
       nvim-tree.enable = true;
       oil.enable = true;
+      ts-autotag.enable = true;
     }
       // (import plugins/bufferline.nix inputs)
       // (import plugins/cmp.nix inputs)
