@@ -7,7 +7,7 @@
     kitty tmux starship
 
     # Productivity
-    firefox
+    firefox obsidian
 
     # Dev
     neovim git lazygit
@@ -15,10 +15,10 @@
     # Virtualization
     docker docker-compose
 
-    # Desktop
-    kdePackages.kcalc remmina
+    # Desktop Environment / Window Manager
+    kdePackages.kcalc
 
     # Work
-    slack
+    slack remmina
   ];
 }
