@@ -5,7 +5,6 @@
 
       # File and directory browsing
       { key = "<Leader>e"; action = ":NvimTreeToggle<CR>"; }
-      { key = "<Leader>o"; action = ":Oil<CR>"; }
 
       # Switch panes
       { key = "<C-h>"; action = "<C-w>h"; }
@@ -47,6 +46,12 @@
       # g = Go To
       { key = "<Leader>gd"; action = ":lua vim.lsp.buf.definition()<CR>"; }
       { key = "<Leader>gr"; action = ":Telescope lsp_references<CR>"; }
+
+      # o = Obsidian
+      { key = "<Leader>og"; action = ":ObsidianFollowLink<CR>"; }
+      { key = "<Leader>on"; action = ":ObsidianNew<CR>"; }
+      { key = "<Leader>or"; action = ":ObsidianRename<CR>"; }
+      { key = "<Leader>ot"; action = ":ObsidianToday<CR>"; }
     ];
 
     v = [
