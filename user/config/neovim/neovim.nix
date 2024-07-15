@@ -22,7 +22,6 @@
       relativenumber = true;
       statuscolumn = "%C %s %=%l %=%r "; # set format of left-hand status column
       clipboard = "unnamedplus"; # use the system clipboard
-      cmdheight = 2; # taller command line window
       ignorecase = true; # ignore case in searches
       showtabline = tabSize;
       splitbelow = true;
@@ -39,9 +38,9 @@
     };
 
     plugins = {
-      nvim-autopairs.enable = true;
       lspsaga.enable = true;
       lualine.enable = true;
+      nvim-autopairs.enable = true;
       nvim-tree.enable = true;
       ts-autotag.enable = true;
     }
