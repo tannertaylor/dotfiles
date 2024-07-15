@@ -3,11 +3,13 @@
     enable = true;
 
     shellAliases = {
-      ll = "ls -al";
+      ls = "lsd";
+      ll = "lsd -al";
       cl = "clear";
       dc = "docker compose";
       tf = "terraform";
       lg = "lazygit";
+      cat = "bat";
     };
 
     bashrcExtra = ''
