@@ -52,7 +52,6 @@
       // (import plugins/lsp.nix inputs)
       // (import plugins/lspsaga.nix inputs)
       // (import plugins/telescope.nix inputs)
-      // (import plugins/toggleterm.nix inputs)
       // (import plugins/treesitter.nix inputs)
     ;
 

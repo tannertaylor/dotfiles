@@ -47,9 +47,6 @@
       # g = Go To
       { key = "<Leader>gd"; action = ":lua vim.lsp.buf.definition()<CR>"; }
       { key = "<Leader>gr"; action = ":Telescope lsp_references<CR>"; }
-
-      # t = Terminal
-      { key = "<Leader>tt"; action = ":ToggleTerm<CR>"; }
     ];
 
     v = [
@@ -64,10 +61,6 @@
     ic = [
       { key = "<C-BS>"; action = "<C-w>"; }
       { key = "<C-h>"; action = "<C-w>"; }
-    ];
-
-    t = [
-      { key = "<C-j>"; action = "<cmd>ToggleTerm<CR>"; }
     ];
   };
 in {
