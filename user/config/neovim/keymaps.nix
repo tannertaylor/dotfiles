@@ -68,7 +68,6 @@ in {
     map (keymap: keymap // { mode = [ "n" ]; }) keymaps.n ++
     map (keymap: keymap // { mode = [ "v" ]; }) keymaps.v ++
     map (keymap: keymap // { mode = [ "i" ]; }) keymaps.i ++
-    map (keymap: keymap // { mode = [ "t" ]; }) keymaps.t ++
     map (keymap: keymap // { mode = [ "i" "c" ]; }) keymaps.ic
   ;
 }
