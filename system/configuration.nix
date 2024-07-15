@@ -20,6 +20,9 @@
   networking.hostName = hostname;
   networking.networkmanager.enable = true;
 
+  # Bluetooth
+  hardware.bluetooth.enable = true;
+
   # Time Zone
   time.timeZone = "America/Phoenix";
 

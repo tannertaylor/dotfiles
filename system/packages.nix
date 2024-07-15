@@ -25,7 +25,7 @@
     docker docker-compose
 
     # Desktop Environment / Window Manager
-    kdePackages.kcalc
+    kdePackages.kcalc kdePackages.bluedevil
 
     # Work
     slack remmina
