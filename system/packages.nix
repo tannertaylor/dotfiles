@@ -1,7 +1,16 @@
 { pkgs, ... }: {
   environment.systemPackages = with pkgs; [
-    # Utilities
-    wget home-manager ripgrep zoxide fzf jq usbutils yazi tldr lsd bat
+    # File and File System Utilities
+    yazi zoxide lsd bat
+
+    # Search Utilities
+    fzf ripgrep
+
+    # Networking Utilities
+    wget speedtest-rs
+
+    # Miscellaneous Utilities
+    home-manager jq usbutils tldr 
 
     # Shell
     kitty zellij starship

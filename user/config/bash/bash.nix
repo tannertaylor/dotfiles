@@ -10,6 +10,7 @@
       tf = "terraform";
       lg = "lazygit";
       cat = "bat";
+      speedtest = "speedtest-rs";
     };
 
     bashrcExtra = ''
