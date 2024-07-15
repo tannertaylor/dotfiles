@@ -6,6 +6,7 @@
     config/gtk/gtk.nix
     config/kitty/kitty.nix
     config/neovim/neovim.nix
+    config/zellij/zellij.nix
   ];
 
   home = {

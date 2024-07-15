@@ -14,13 +14,17 @@
     };
 
     bashrcExtra = ''
+      # Shell Setup
       eval "$(starship init bash)"
       eval "$(zoxide init bash)"
       stty werase '^h' # Set ctrl+backspace (^h) to erase previous word in TTY settings.
 
+      # Env Vars
+      EDITOR="nvim"
       REPOS="$HOME/code"
       NIX_FLAKE_PATH="$REPOS/tannertaylor/dotfiles"
 
+      # Functions
       function sys-rebuild() { sudo nixos-rebuild switch --flake "$NIX_FLAKE_PATH"; }
       function hm-rebuild() { home-manager switch --flake "$NIX_FLAKE_PATH" -b bak; }
     '';
