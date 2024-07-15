@@ -1,10 +1,10 @@
 { pkgs, ... }: {
   environment.systemPackages = with pkgs; [
     # Utilities
-    wget home-manager ripgrep zoxide fzf jq usbutils ranger
+    wget home-manager ripgrep zoxide fzf jq usbutils ranger tldr
 
     # Shell
-    kitty tmux starship
+    kitty zellij starship
 
     # Productivity
     firefox obsidian
