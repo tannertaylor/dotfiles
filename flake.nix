@@ -11,8 +11,7 @@
     nixvim.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { self, nixpkgs, home-manager, nixvim, ... }@inputs:
-  let
+  outputs = { self, nixpkgs, home-manager, nixvim, ... }@inputs: let
     system = "x86_64-linux";
   in {
     nixosConfigurations.thinkpadt15 = nixpkgs.lib.nixosSystem {
@@ -30,7 +29,7 @@
       pkgs = nixpkgs.legacyPackages.${system};
       modules = [
         user/home.nix
-	nixvim.homeManagerModules.nixvim
+        nixvim.homeManagerModules.nixvim
       ];
       extraSpecialArgs = {
         inherit inputs;
