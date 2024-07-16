@@ -5,7 +5,6 @@
   };
 
   xdg.configFile."zellij/config.kdl".text = ''
-    default_layout "compact"
     theme "gruvbox-dark"
     
     ui {
@@ -20,6 +19,20 @@
       shared { 
         bind "Ctrl d" { SwitchToMode "move"; }
         bind "Ctrl r" { SwitchToMode "resize"; }
+      }
+    }
+  '';
+
+  xdg.configFile."zellij/layouts/default.kdl".text = ''
+    layout {
+      pane size=1 borderless=true {
+        plugin location="zellij:tab-bar"
+      }
+
+      pane
+
+      pane size=1 borderless=true {
+        plugin location="zellij:status-bar"
       }
     }
   '';
