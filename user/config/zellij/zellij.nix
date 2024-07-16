@@ -27,6 +27,11 @@
         bind "Ctrl k" { MoveFocus "Up"; }
         bind "Ctrl l" { MoveFocus "Right"; }
       }
+
+      tab {
+        bind "Ctrl h" { MoveTab "Left"; }
+        bind "Ctrl l" { MoveTab "Right"; }
+      }
     }
   '';
 
