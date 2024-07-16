@@ -21,6 +21,10 @@
         bind "Ctrl r" { SwitchToMode "resize"; }
       }
 
+      shared_except "locked" "normal" {
+        bind "Ctrl c" { SwitchToMode "normal"; }
+      }
+
       normal {
         bind "Ctrl h" { MoveFocus "Left"; }
         bind "Ctrl j" { MoveFocus "Down"; }
