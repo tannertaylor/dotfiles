@@ -14,11 +14,18 @@
     }
 
     keybinds {
-      unbind "Ctrl h" "Ctrl n"
+      unbind "Ctrl n"
 
       shared { 
         bind "Ctrl d" { SwitchToMode "move"; }
         bind "Ctrl r" { SwitchToMode "resize"; }
+      }
+
+      normal {
+        bind "Ctrl h" { MoveFocus "Left"; }
+        bind "Ctrl j" { MoveFocus "Down"; }
+        bind "Ctrl k" { MoveFocus "Up"; }
+        bind "Ctrl l" { MoveFocus "Right"; }
       }
     }
   '';
