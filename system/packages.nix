@@ -16,7 +16,7 @@
     kitty zellij starship
 
     # Productivity
-    firefox obsidian
+    firefox obsidian discord
 
     # Dev
     neovim git lazygit
