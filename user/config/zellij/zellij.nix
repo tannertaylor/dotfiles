@@ -5,8 +5,14 @@
   };
 
   xdg.configFile."zellij/config.kdl".text = ''
+    default_layout "compact"
     theme "gruvbox-dark"
-    hide_session_name true
+    
+    ui {
+      pane_frames {
+        hide_session_name true
+      }
+    }
 
     keybinds {
       unbind "Ctrl h" "Ctrl n"
