@@ -65,7 +65,7 @@
 
       swap_floating_layout name="basic" {
         floating_panes max_panes=1 {
-          pane { x "5%"; y "5%"; width "90%"; height "90%"; }
+          pane { x "10%"; y "10%"; width "80%"; height "80%"; }
         }
 
         floating_panes max_panes=10 {
