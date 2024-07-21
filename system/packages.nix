@@ -16,7 +16,7 @@
     kitty zellij starship
 
     # Productivity
-    firefox opera vivaldi logseq discord
+    vivaldi logseq discord
 
     # Dev
     neovim git lazygit
