@@ -50,7 +50,6 @@
       // (import plugins/dap.nix inputs)
       // (import plugins/lsp.nix inputs)
       // (import plugins/lspsaga.nix inputs)
-      // (import plugins/obsidian.nix inputs)
       // (import plugins/telescope.nix inputs)
       // (import plugins/treesitter.nix inputs)
     ;
