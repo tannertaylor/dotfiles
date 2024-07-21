@@ -25,8 +25,13 @@
       };
     };
 
-    homeConfigurations.tanner = home-manager.lib.homeManagerConfiguration {
-      pkgs = nixpkgs.legacyPackages.${system};
+    homeConfigurations.tanner = let
+      pkgs = import nixpkgs {
+        inherit system;
+        config.allowUnfree = true;
+      };
+    in home-manager.lib.homeManagerConfiguration {
+      inherit pkgs;
       modules = [
         user/home.nix
         nixvim.homeManagerModules.nixvim
