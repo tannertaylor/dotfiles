@@ -1,4 +1,10 @@
 { pkgs, ... }: {
+  xdg.configFile."vivaldi/css/no-favicon-outline.css".text = ''
+    .tab.active .tab-header .favicon:not(.svg) {
+      filter: none !important;
+    }
+  '';
+
   xdg.dataFile."applications/vivaldi-stable.desktop".text = let
     vivaldiBin = "${pkgs.vivaldi}/bin/vivaldi";
   in ''
