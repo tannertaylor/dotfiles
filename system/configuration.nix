@@ -1,4 +1,4 @@
-{ config, pkgs, hostname, ... }:
+{ hostname, ... }:
 
 {
   imports = [ 
@@ -66,7 +66,7 @@
   users.users.tanner = {
     isNormalUser = true;
     description = "Tanner Taylor";
-    extraGroups = [ "networkmanager" "wheel" "docker" "libvirtd" ];
+    extraGroups = [ "networkmanager" "wheel" "docker" "vboxusers" ];
   };
 
   # This value determines the NixOS release from which the default
