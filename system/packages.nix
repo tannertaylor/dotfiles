@@ -1,7 +1,7 @@
 { pkgs, ... }: {
   environment.systemPackages = with pkgs; [
     # File and File System Utilities
-    yazi zoxide lsd bat
+    yazi zoxide lsd bat rclone
 
     # Search Utilities
     fzf ripgrep

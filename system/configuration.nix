@@ -5,7 +5,7 @@
     ./thinkpadt15-hardware-configuration.nix
     ./fonts.nix
     ./packages.nix
-    ./services.nix
+    ./virt.nix
   ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
@@ -66,9 +66,7 @@
   users.users.tanner = {
     isNormalUser = true;
     description = "Tanner Taylor";
-    extraGroups = [ "networkmanager" "wheel" "docker" ];
-    packages = with pkgs; [
-    ];
+    extraGroups = [ "networkmanager" "wheel" "docker" "libvirtd" ];
   };
 
   # This value determines the NixOS release from which the default
