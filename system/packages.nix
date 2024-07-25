@@ -10,7 +10,7 @@
     wget speedtest-rs
 
     # Miscellaneous Utilities
-    home-manager jq usbutils tldr htop
+    home-manager jq usbutils tldr htop thefuck
 
     # Shell
     kitty zellij starship

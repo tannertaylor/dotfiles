@@ -17,6 +17,7 @@
       # Shell Setup
       eval "$(starship init bash)"
       eval "$(zoxide init bash)"
+      eval "$(thefuck --alias)"
       stty werase '^h' # Set ctrl+backspace (^h) to erase previous word in TTY settings.
 
       # Env Vars
