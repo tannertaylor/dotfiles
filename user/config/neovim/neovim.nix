@@ -1,4 +1,15 @@
-{ pkgs, ... }@inputs: {
+{ pkgs, lib, ... }@inputs: let
+  plugins = [
+    ./plugins/bufferline.nix
+    ./plugins/cmp.nix
+    ./plugins/comment.nix
+    ./plugins/dap.nix
+    ./plugins/lsp.nix
+    ./plugins/lspsaga.nix
+    ./plugins/telescope.nix
+    ./plugins/treesitter.nix
+  ];
+in {
   imports = [
     ./keymaps.nix
   ];
@@ -43,16 +54,7 @@
       nvim-autopairs.enable = true;
       nvim-tree.enable = true;
       ts-autotag.enable = true;
-    }
-      // (import plugins/bufferline.nix inputs)
-      // (import plugins/cmp.nix inputs)
-      // (import plugins/comment.nix inputs)
-      // (import plugins/dap.nix inputs)
-      // (import plugins/lsp.nix inputs)
-      // (import plugins/lspsaga.nix inputs)
-      // (import plugins/telescope.nix inputs)
-      // (import plugins/treesitter.nix inputs)
-    ;
+    } // lib.attrsets.mergeAttrsList(map (plugin: import plugin inputs) plugins);
 
     extraPlugins = [ pkgs.vimPlugins.omnisharp-extended-lsp-nvim ];
     extraConfigLua = "vim.diagnostic.config({ update_in_insert = true })";
