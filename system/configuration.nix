@@ -66,7 +66,7 @@
   users.users.tanner = {
     isNormalUser = true;
     description = "Tanner Taylor";
-    extraGroups = [ "networkmanager" "wheel" "docker" "vboxusers" ];
+    extraGroups = [ "networkmanager" "wheel" "docker" "libvirtd" ];
   };
 
   # This value determines the NixOS release from which the default
