@@ -3,12 +3,6 @@
     n = [
       { key = "<Space>"; action = "<Noop>"; }
       
-      # Misc.
-      { # Show completion, even if I haven't started typing yet.
-        key = "<Leader><Leader>";
-        action = ":lua require('cmp').complete({ reason = require('cmp').ContextReason.Auto })<CR>";
-      }
-
       # File and directory browsing
       { key = "<Leader>e"; action = ":NvimTreeToggle<CR>"; }
 
