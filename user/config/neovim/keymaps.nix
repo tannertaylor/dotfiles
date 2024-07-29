@@ -2,6 +2,12 @@
   keymaps = {
     n = [
       { key = "<Space>"; action = "<Noop>"; }
+      
+      # Misc.
+      { # Show completion, even if I haven't started typing yet.
+        key = "<Leader><Leader>";
+        action = ":lua require('cmp').complete({ reason = require('cmp').ContextReason.Auto })<CR>";
+      }
 
       # File and directory browsing
       { key = "<Leader>e"; action = ":NvimTreeToggle<CR>"; }
@@ -11,13 +17,6 @@
       { key = "<C-j>"; action = "<C-w>j"; }
       { key = "<C-k>"; action = "<C-w>k"; }
       { key = "<C-l>"; action = "<C-w>l"; }
-
-      # LSP actions
-      { key = "<Leader>la"; action = ":Lspsaga code_action<CR>"; }
-      { key = "<Leader>ld"; action = ":Lspsaga show_line_diagnostics<CR>"; }
-      { key = "<Leader>lh"; action = ":Lspsaga hover_doc<CR>"; }
-      { key = "<Leader>lo"; action = ":Lspsaga outline<CR>"; }
-      { key = "<Leader>lr"; action = ":Lspsaga rename<CR>"; }
 
       # Moving lines
       { key = "<A-j>"; action = ":m +1<CR>=="; }
@@ -47,6 +46,13 @@
       { key = "<Leader>gd"; action = ":lua vim.lsp.buf.definition()<CR>"; }
       { key = "<Leader>gr"; action = ":Telescope lsp_references<CR>"; }
 
+      # l = LSP actions
+      { key = "<Leader>la"; action = ":Lspsaga code_action<CR>"; }
+      { key = "<Leader>ld"; action = ":Lspsaga show_line_diagnostics<CR>"; }
+      { key = "<Leader>lh"; action = ":Lspsaga hover_doc<CR>"; }
+      { key = "<Leader>lo"; action = ":Lspsaga outline<CR>"; }
+      { key = "<Leader>lr"; action = ":Lspsaga rename<CR>"; }
+
       # o = Obsidian
       { key = "<Leader>og"; action = ":ObsidianFollowLink<CR>"; }
       { key = "<Leader>on"; action = ":ObsidianNew<CR>"; }
@@ -60,6 +66,11 @@
     ];
 
     i = [
+      { # Show completion, even if I haven't started typing yet.
+        key = "<C-Space>";
+        action = "<cmd>lua require('cmp').complete()<CR>";
+      }
+
       { key = "<C-Del>"; action = "<esc>ldwi"; }
     ];
 
