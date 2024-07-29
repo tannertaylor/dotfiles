@@ -51,12 +51,6 @@
       { key = "<Leader>ld"; action = ":lua vim.diagnostic.open_float()<CR>"; }
       { key = "<Leader>lh"; action = ":lua vim.lsp.buf.hover()<CR>"; }
       { key = "<Leader>lr"; action = ":lua vim.lsp.buf.rename()<CR>"; }
-
-      # o = Obsidian
-      { key = "<Leader>og"; action = ":ObsidianFollowLink<CR>"; }
-      { key = "<Leader>on"; action = ":ObsidianNew<CR>"; }
-      { key = "<Leader>or"; action = ":ObsidianRename<CR>"; }
-      { key = "<Leader>ot"; action = ":ObsidianToday<CR>"; }
     ];
 
     v = [
