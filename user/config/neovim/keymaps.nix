@@ -18,10 +18,6 @@
       { key = "<C-k>"; action = "<C-w>k"; }
       { key = "<C-l>"; action = "<C-w>l"; }
 
-      # Moving lines
-      { key = "<A-j>"; action = ":m +1<CR>=="; }
-      { key = "<A-k>"; action = ":m -2<CR>=="; }
-
       # b = Buffer
       { key = "<Leader>bc"; action = ":bd<CR>"; }
       { key = "<Leader>bb"; action = ":BufferLinePick<CR>"; }
@@ -54,8 +50,6 @@
     ];
 
     v = [
-      { key = "<A-j>"; action = ":m '>+1<CR>gv=gv"; }
-      { key = "<A-k>"; action = ":m '<-2<CR>gv=gv"; }
     ];
 
     i = [
@@ -63,8 +57,6 @@
         key = "<C-Space>";
         action = "<cmd>lua require('cmp').complete()<CR>";
       }
-
-      { key = "<C-Del>"; action = "<esc>ldwi"; }
     ];
 
     ic = [
