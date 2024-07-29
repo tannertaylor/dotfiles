@@ -47,11 +47,10 @@
       { key = "<Leader>gr"; action = ":Telescope lsp_references<CR>"; }
 
       # l = LSP actions
-      { key = "<Leader>la"; action = ":Lspsaga code_action<CR>"; }
-      { key = "<Leader>ld"; action = ":Lspsaga show_line_diagnostics<CR>"; }
-      { key = "<Leader>lh"; action = ":Lspsaga hover_doc<CR>"; }
-      { key = "<Leader>lo"; action = ":Lspsaga outline<CR>"; }
-      { key = "<Leader>lr"; action = ":Lspsaga rename<CR>"; }
+      { key = "<Leader>la"; action = ":lua vim.lsp.buf.code_action()<CR>"; }
+      { key = "<Leader>ld"; action = ":lua vim.diagnostic.open_float()<CR>"; }
+      { key = "<Leader>lh"; action = ":lua vim.lsp.buf.hover()<CR>"; }
+      { key = "<Leader>lr"; action = ":lua vim.lsp.buf.rename()<CR>"; }
 
       # o = Obsidian
       { key = "<Leader>og"; action = ":ObsidianFollowLink<CR>"; }
