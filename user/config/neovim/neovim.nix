@@ -9,6 +9,10 @@
     ./plugins/telescope.nix
     ./plugins/treesitter.nix
   ];
+
+  extraPlugins = map (x: import x inputs) [
+    ./plugins/which-key.nix
+  ];
 in {
   imports = [
     ./keymaps.nix
@@ -46,6 +50,8 @@ in {
       signcolumn = "yes";
       scrolloff = 4;
       conceallevel = 1;
+      timeout = true;
+      timeoutlen = 300;
     };
 
     plugins = {
@@ -56,7 +62,16 @@ in {
       ts-autotag.enable = true;
     } // lib.attrsets.mergeAttrsList(map (plugin: import plugin inputs) plugins);
 
-    extraPlugins = [ pkgs.vimPlugins.omnisharp-extended-lsp-nvim ];
-    extraConfigLua = "vim.diagnostic.config({ update_in_insert = true })";
+    extraPlugins = [
+      pkgs.vimPlugins.omnisharp-extended-lsp-nvim
+    ] ++ map (x: x.package) extraPlugins;
+
+    extraConfigLua = let
+      extraPluginsLua = builtins.concatStringsSep "\n" (map (x: "${x.setup}\n") extraPlugins);
+      # TODO: I think nixvim exposes vim.diagnostic, so I should be able to pull that out of extraConfigLua
+    in ''
+      vim.diagnostic.config({ update_in_insert = true })
+      ${extraPluginsLua}
+    '';
   };
 }
