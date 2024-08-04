@@ -28,6 +28,8 @@
       # Functions
       function sys-rebuild() { sudo nixos-rebuild switch --flake "$NIX_FLAKE_PATH"; }
       function hm-rebuild() { home-manager switch --flake "$NIX_FLAKE_PATH" -b "$(date +%s).bak"; }
+
+      function cd() { zoxide add "$@" && builtin cd "$@"; }
     '';
   };
 }
