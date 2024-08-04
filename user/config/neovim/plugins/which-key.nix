@@ -2,6 +2,11 @@
   keymaps = [
     { key = "<leader>"; group = "Leader Commands"; }
     { key = "<leader>e"; action = ":NvimTreeToggle<cr>"; desc = "Toggle File Explorer"; }
+    { key = "<leader>y"; luaFunction = ''function ()
+      local buffer_path = vim.fn.expand('%:p:h')
+      local zellij_cmd = 'zellij action new-pane --floating --cwd "' .. buffer_path .. '"'
+      vim.fn.system(zellij_cmd .. ' -- sh -c "NVIM_REMOTE=' .. vim.v.servername .. ' yazi"')
+    end''; desc = "TEMP: Open Yazi"; }
 
     { key = "<leader>b"; group = "Buffer Commands"; }
     { key = "<leader>bc"; action = ":bd<cr>"; desc = "Close Current Buffer"; }
@@ -33,7 +38,8 @@
   ];
 
   keymapsLuaList = map (x:
-    if x ? desc then ''["${x.key}"] = { "${x.action}", "${x.desc}" },''
+    if x ? desc && x ? action then ''["${x.key}"] = { "${x.action}", "${x.desc}" },''
+    else if x ? desc && x ? luaFunction then ''["${x.key}"] = { ${x.luaFunction}, "${x.desc}" },''
     else if x ? group then ''["${x.key}"] = { name = "${x.group}" },''
     else ''["${x.key}"] = { "${x.action}" },''
   ) keymaps;
