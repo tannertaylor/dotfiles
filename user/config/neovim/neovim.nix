@@ -11,6 +11,7 @@
   ];
 
   extraPlugins = map (x: import x inputs) [
+    ./plugins/lualine.nix
     ./plugins/which-key.nix
   ];
 in {
@@ -56,7 +57,6 @@ in {
 
     plugins = {
       dressing.enable = true;
-      lualine.enable = true;
       nvim-autopairs.enable = true;
       nvim-tree.enable = true;
       ts-autotag.enable = true;
