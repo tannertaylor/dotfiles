@@ -25,7 +25,7 @@ in {
     viAlias = true;
     vimAlias = true;
 
-    colorschemes.gruvbox.enable = true;
+    colorschemes.ayu.enable = true;
 
     globals = {
       mapleader = " ";
@@ -66,8 +66,9 @@ in {
       pkgs.vimPlugins.omnisharp-extended-lsp-nvim
     ] ++ map (x: x.package) extraPlugins;
 
-    extraConfigLua = let
-      extraPluginsLua = builtins.concatStringsSep "\n" (map (x: "${x.setup}\n") extraPlugins);
+    extraConfigLua = with builtins; let
+      extraPluginsWithSetup = filter (x: x ? setup) extraPlugins;
+      extraPluginsLua = concatStringsSep "\n" (map (x: "${x.setup}\n") extraPluginsWithSetup);
       # TODO: I think nixvim exposes vim.diagnostic, so I should be able to pull that out of extraConfigLua
     in ''
       vim.diagnostic.config({ update_in_insert = true })
