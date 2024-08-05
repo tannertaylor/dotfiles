@@ -5,7 +5,6 @@
     ./plugins/comment.nix
     ./plugins/dap.nix
     ./plugins/lsp.nix
-    ./plugins/lspsaga.nix
     ./plugins/telescope.nix
     ./plugins/treesitter.nix
   ];
