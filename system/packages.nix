@@ -19,7 +19,7 @@
     vivaldi logseq discord
 
     # Dev
-    neovim git lazygit
+    neovim git lazygit gcc
 
     # Virtualization
     docker docker-compose
