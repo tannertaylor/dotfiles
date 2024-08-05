@@ -5,7 +5,23 @@
   };
 
   xdg.configFile."zellij/config.kdl".text = ''
-    theme "Dracula"
+    theme "ayu"
+
+    themes {
+      ayu {
+        fg "#BFBDB6"
+        bg "#0D1017"
+        black "#0B0E14"
+        red "#F07178"
+        green "#7FD962"
+        yellow "#E6B673"
+        blue "#59C2FF"
+        magenta "#D2A6FF"
+        cyan "#95E6CB"
+        white "#BFBDB6"
+        orange "#F29668"
+      }
+    }
     
     ui {
       pane_frames {
