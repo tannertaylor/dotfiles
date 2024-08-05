@@ -5,7 +5,7 @@
   };
 
   xdg.configFile."zellij/config.kdl".text = ''
-    theme "gruvbox-dark"
+    theme "Dracula"
     
     ui {
       pane_frames {
@@ -16,7 +16,7 @@
     keybinds {
       unbind "Ctrl n" "Ctrl h"
 
-      shared { 
+      shared_except "locked" { 
         bind "Ctrl d" { SwitchToMode "move"; }
         bind "Ctrl r" { SwitchToMode "resize"; }
       }
