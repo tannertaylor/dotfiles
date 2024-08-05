@@ -33,7 +33,7 @@
       unbind "Ctrl n" "Ctrl h"
 
       shared_except "locked" { 
-        bind "Ctrl d" { SwitchToMode "move"; }
+        bind "Ctrl w" { SwitchToMode "move"; }
         bind "Ctrl r" { SwitchToMode "resize"; }
       }
 
