@@ -70,6 +70,7 @@ in {
       extraPluginsLua = concatStringsSep "\n" (map (x: "${x.setup}\n") extraPluginsWithSetup);
     in ''
       vim.diagnostic.config({ update_in_insert = true })
+
       ${extraPluginsLua}
     '';
   };
