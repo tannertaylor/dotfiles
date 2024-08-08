@@ -1,4 +1,4 @@
-{ ... }: {
+{ config, ... }: {
   programs.bash = {
     enable = true;
 
@@ -13,7 +13,9 @@
       speedtest = "speedtest-rs";
     };
 
-    bashrcExtra = ''
+    bashrcExtra = let
+      homeManagerFlake = if config.headless then "headless" else "personal";
+    in ''
       # Shell Setup
       eval "$(starship init bash)"
       eval "$(zoxide init bash)"
@@ -27,7 +29,7 @@
 
       # Functions
       function sys-rebuild() { sudo nixos-rebuild switch --flake "$NIX_FLAKE_PATH"; }
-      function hm-rebuild() { home-manager switch --flake "$NIX_FLAKE_PATH"; }
+      function hm-rebuild() { home-manager switch --flake "$NIX_FLAKE_PATH#${homeManagerFlake}"; }
 
       function cd() { zoxide add "$@" && builtin cd "$@"; }
     '';

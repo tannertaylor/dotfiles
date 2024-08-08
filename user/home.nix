@@ -1,4 +1,4 @@
-{ username, ... }: {
+{ lib, username, ... }: {
   imports = [
     config/bash/bash.nix
     config/git/git.nix
@@ -9,9 +9,15 @@
     config/zellij/zellij.nix
   ];
 
-  home = {
-    username = username;
-    homeDirectory = "/home/${username}";
-    stateVersion = "24.05";
+  options = with lib.options; {
+    headless = mkEnableOption "Headless Configuration";
+  };
+
+  config = {
+    home = {
+      username = username;
+      homeDirectory = "/home/${username}";
+      stateVersion = "24.05";
+    };
   };
 }
