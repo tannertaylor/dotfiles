@@ -14,7 +14,7 @@
       serviceConfig = {
         Type = "simple";
         LimitNOFILE = "1000000";
-        ExecStart = attrsets.getBin pkgs.rustdesk-server;
+        ExecStart = "${pkgs.rustdesk-server}/bin/hbbs";
         WorkingDirectory = "/var/lib/rustdesk-server";
         Restart = "always";
         StandardOutput = "append:/var/log/rustdesk-server/hbbs.log";
