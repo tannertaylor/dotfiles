@@ -15,7 +15,7 @@
 
     bashrcExtra = let
       homeManagerFlake = if config.headless then "headless" else "personal";
-      nixOSFlake = if config.headless then "headless" else "personal";
+      nixOSFlake = if config.headless then "$HOSTNAME" else "personal";
     in ''
       # Shell Setup
       eval "$(starship init bash)"

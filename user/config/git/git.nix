@@ -5,6 +5,7 @@
     userEmail = "tanner@tannertaylor.dev";
     extraConfig = {
       init.defaultBranch = "main";
+      pull.ff = "only";
     };
   };
 }
