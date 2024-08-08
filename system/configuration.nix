@@ -5,6 +5,7 @@
     ./virt.nix
     ./services.nix
     ./desktop.nix
+    ./keyboard.nix
     ./sound.nix
   ];
 
@@ -49,10 +50,6 @@
       LC_TELEPHONE = "en_US.UTF-8";
       LC_TIME = "en_US.UTF-8";
     };
-
-    # Keyboard
-    services.xserver.xkb.layout = "us";
-    services.xserver.xkb.options = "ctrl:nocaps";
 
     # Printing
     services.printing.enable = !config.headless;
