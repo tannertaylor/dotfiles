@@ -3,6 +3,7 @@
     ./fonts.nix
     ./packages.nix
     ./virt.nix
+    ./services.nix
     ./desktop.nix
     ./sound.nix
   ];
