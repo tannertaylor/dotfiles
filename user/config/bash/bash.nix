@@ -27,6 +27,7 @@
       EDITOR="nvim"
       REPOS="$HOME/code"
       NIX_FLAKE_PATH="$REPOS/tannertaylor/dotfiles"
+      DEVFLAKES="github:tannertaylor/devflakes"
 
       # Functions
       function sys-rebuild() { sudo nixos-rebuild switch --flake "$NIX_FLAKE_PATH#${nixOSFlake}"; }
