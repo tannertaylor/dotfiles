@@ -2,11 +2,7 @@
   imports = [ 
     ./packages.nix
     services/services.nix
-    services/virt.nix
     desktop/desktop.nix
-    desktop/fonts.nix
-    desktop/keyboard.nix
-    desktop/sound.nix
   ];
 
   options = with options; {

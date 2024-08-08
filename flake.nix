@@ -13,24 +13,29 @@
     system = "x86_64-linux";
   in {
     nixosConfigurations = let
-      mkNixOSConfig = { hostname, headless ? false, hardwareConfig }: nixpkgs.lib.nixosSystem {
+      mkNixOSConfig = { hostname, headless ? false, modules ? [] }: nixpkgs.lib.nixosSystem {
         inherit system;
         modules = [
           system/configuration.nix
-          hardwareConfig
           ({ ... }: { inherit hostname headless; })
-        ];
+        ] ++ modules;
       };
     in {
       personal = mkNixOSConfig {
         hostname = "thinkpadt15";
-        hardwareConfig = ./system/hardware/thinkpadt15-hardware-configuration.nix;
+        modules = [ ./system/hardware/thinkpadt15-hardware-configuration.nix ];
       };
 
       srv001 = mkNixOSConfig {
         hostname = "srv001";
         headless = true;
-        hardwareConfig = ./system/hardware/srv001-hardware-configuration.nix;
+        modules = [
+          ./system/hardware/srv001-hardware-configuration.nix
+          ({ ... }: {
+            services.rustdesk-server.enable = true;
+            services.rustdesk-server.relayIP = "";
+          })
+        ];
       };
     };
 

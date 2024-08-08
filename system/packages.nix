@@ -29,7 +29,5 @@
 
     # Desktop Environment / Window Manager
     kdePackages.kcalc kdePackages.bluedevil
-  ] ++ lib.lists.optionals (config.hostname == "srv001") [
-    rustdesk-server
   ];
 }
