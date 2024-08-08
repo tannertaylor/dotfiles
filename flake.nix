@@ -24,13 +24,13 @@
     in {
       personal = mkNixOSConfig {
         hostname = "thinkpadt15";
-        hardwareConfig = ./system/thinkpadt15-hardware-configuration.nix;
+        hardwareConfig = ./system/hardware/thinkpadt15-hardware-configuration.nix;
       };
 
       srv001 = mkNixOSConfig {
         hostname = "srv001";
         headless = true;
-        hardwareConfig = ./system/srv001-hardware-configuration.nix;
+        hardwareConfig = ./system/hardware/srv001-hardware-configuration.nix;
       };
     };
 

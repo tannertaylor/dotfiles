@@ -1,12 +1,12 @@
 { config, lib, ... }: with lib; {
   imports = [ 
-    ./fonts.nix
     ./packages.nix
-    ./virt.nix
-    ./services.nix
-    ./desktop.nix
-    ./keyboard.nix
-    ./sound.nix
+    services/services.nix
+    services/virt.nix
+    desktop/desktop.nix
+    desktop/fonts.nix
+    desktop/keyboard.nix
+    desktop/sound.nix
   ];
 
   options = with options; {
