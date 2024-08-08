@@ -32,8 +32,7 @@
         modules = [
           ./system/hardware/srv001-hardware-configuration.nix
           ({ ... }: {
-            services.rustdesk-server.enable = true;
-            services.rustdesk-server.relayIP = "";
+            services.rustdesk-server.signal.enable = true;
           })
         ];
       };
