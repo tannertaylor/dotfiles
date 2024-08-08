@@ -15,7 +15,6 @@
         Type = "simple";
         LimitNOFILE = "1000000";
         ExecStart = "${pkgs.rustdesk-server}/bin/hbbs";
-        WorkingDirectory = "/var/lib/rustdesk-server";
         Restart = "always";
         RestartSec = "10";
       };
