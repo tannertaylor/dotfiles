@@ -19,6 +19,7 @@
         Restart = "always";
         StandardOutput = "append:/var/log/rustdesk-server/hbbs.log";
         StandardError = "append:/var/log/rustdesk-server/hbbs.error";
+        RestartSec = "10";
       };
       wantedBy = [ "multi-user.target" ];
     };
