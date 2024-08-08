@@ -1,4 +1,4 @@
-{ lib, username, ... }: {
+{ config, lib, ... }: {
   imports = [
     config/bash/bash.nix
     config/git/git.nix
@@ -10,13 +10,17 @@
   ];
 
   options = with lib.options; {
-    headless = mkEnableOption "Headless Configuration";
+    headless = mkEnableOption "headless configuration";
+    username = mkOption {
+      type = lib.types.str;
+      description = "my username";
+    };
   };
 
   config = {
     home = {
-      username = username;
-      homeDirectory = "/home/${username}";
+      username = config.username;
+      homeDirectory = "/home/${config.username}";
       stateVersion = "24.05";
     };
   };
