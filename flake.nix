@@ -13,11 +13,11 @@
     system = "x86_64-linux";
   in {
     nixosConfigurations = let
-      mkNixOSConfig = { hostname, headless ? false, modules ? [] }: nixpkgs.lib.nixosSystem {
+      mkNixOSConfig = { hostname, config ? { }, modules ? [] }: nixpkgs.lib.nixosSystem {
         inherit system;
         modules = [
           system/configuration.nix
-          ({ ... }: { inherit hostname headless; })
+          ({ ... }: { inherit hostname; })
         ] ++ modules;
       };
     in {
@@ -28,10 +28,12 @@
 
       srv001 = mkNixOSConfig {
         hostname = "srv001";
-        headless = true;
         modules = [
           ./system/hardware/srv001-hardware-configuration.nix
-          ({ ... }: {
+          ({ config, ... }: {
+            headless = true;
+            homelab = true;
+
             services.rustdesk-server.signal.enable = true;
           })
         ];

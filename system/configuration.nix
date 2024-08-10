@@ -11,7 +11,9 @@
       description = "The hostname of the NixOS machine";
     };
 
-    headless = mkEnableOption "Headless Configuration";
+    headless = mkEnableOption "headless configuration";
+
+    homelab = mkEnableOption "homelab cluster configuration";
   };
 
   config = {

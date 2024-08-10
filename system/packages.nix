@@ -20,14 +20,14 @@
 
     # Virtualization
     docker docker-compose
-
-    # Work
-    slack remmina
   ] ++ lib.lists.optionals (!config.headless) [
     # Productivity
     kitty vivaldi logseq discord
 
     # Desktop Environment / Window Manager
     kdePackages.kcalc kdePackages.bluedevil
+
+    # Work
+    slack remmina
   ];
 }
