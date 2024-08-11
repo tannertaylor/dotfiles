@@ -23,5 +23,18 @@
       homeDirectory = "/home/${config.username}";
       stateVersion = "24.05";
     };
+
+    nix.registry.dev = {
+      from = {
+        type = "indirect";
+        id = "dev";
+      };
+
+      to = {
+        type = "github";
+        owner = "tannertaylor";
+        repo = "devflakes";
+      };
+    };
   };
 }
