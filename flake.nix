@@ -1,5 +1,5 @@
 {
-  description = "My system/user configuration flake";
+  description = "My user configuration flake";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-24.05";
@@ -10,54 +10,24 @@
   };
 
   outputs = { nixpkgs, home-manager, nixvim, ... }: let
-    system = "x86_64-linux";
-  in {
-    nixosConfigurations = let
-      mkNixOSConfig = { hostname, config ? { }, modules ? [] }: nixpkgs.lib.nixosSystem {
-        inherit system;
-        modules = [
-          system/configuration.nix
-          ({ ... }: { inherit hostname; })
-        ] ++ modules;
-      };
-    in {
-      personal = mkNixOSConfig {
-        hostname = "thinkpadt15";
-        modules = [ ./system/hardware/thinkpadt15-hardware-configuration.nix ];
-      };
-
-      srv001 = mkNixOSConfig {
-        hostname = "srv001";
-        modules = [
-          ./system/hardware/srv001-hardware-configuration.nix
-          ({ config, ... }: {
-            headless = true;
-            homelab = true;
-
-            services.rustdesk-server.signal.enable = true;
-          })
-        ];
-      };
+    pkgs = import nixpkgs {
+      system = "x86_64-linux";
+      config.allowUnfree = true;
     };
 
-    homeConfigurations = let
-      pkgs = import nixpkgs {
-        inherit system;
-        config.allowUnfree = true;
-      };
-
-      mkHMConfig = { headless ? false }: home-manager.lib.homeManagerConfiguration {
-        inherit pkgs;
-        modules = [
-          user/home.nix
-          nixvim.homeManagerModules.nixvim
-          ({ ... }: {
-            inherit headless;
-            username = "tanner";
-          })
-        ];
-      };
-    in {
+    mkHMConfig = { headless ? false }: home-manager.lib.homeManagerConfiguration {
+      inherit pkgs;
+      modules = [
+        ./home.nix
+        nixvim.homeManagerModules.nixvim
+        ({ ... }: {
+          inherit headless;
+          username = "tanner";
+        })
+      ];
+    };
+  in {
+    homeConfigurations = {
       personal = mkHMConfig { };
       headless = mkHMConfig { headless = true; };
     };
