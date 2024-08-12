@@ -25,13 +25,14 @@
 
       # Env Vars
       EDITOR="nvim"
-      REPOS="$HOME/code"
-      NIX_FLAKE_PATH="$REPOS/tannertaylor/dotfiles"
+      REPOS="$HOME/code/tannertaylor"
+      HM_FLAKE_PATH="$REPOS/dotfiles"
+      NIXOS_FLAKE_PATH="$REPOS/nixos-config"
       DEVFLAKES="github:tannertaylor/devflakes"
 
       # Functions
-      function sys-rebuild() { sudo nixos-rebuild switch --flake "$NIX_FLAKE_PATH#${nixOSFlake}"; }
-      function hm-rebuild() { home-manager switch --flake "$NIX_FLAKE_PATH#${homeManagerFlake}"; }
+      function sys-rebuild() { sudo nixos-rebuild switch --flake "$NIXOS_FLAKE_PATH#${nixOSFlake}"; }
+      function hm-rebuild() { home-manager switch --flake "$HM_FLAKE_PATH#${homeManagerFlake}"; }
 
       function cd() { zoxide add "$@" && builtin cd "$@"; }
     '';
