@@ -6,6 +6,7 @@
       "c_sharp"
       "bash"
       "rust"
+      "hcl"
     ];
   };
 }
