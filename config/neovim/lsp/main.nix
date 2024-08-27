@@ -1,4 +1,4 @@
-{ ... }: {
+{ lib, pkgs, ... }: with builtins; with lib; {
   lsp = {
     enable = true;
 
@@ -28,7 +28,19 @@
       };
       terraformls.enable = true;
       tsserver.enable = true;
-      yamlls.enable = true;
+      yamlls = let
+        foraAzPipelineSchema = pkgs.writeTextFile  {
+          name = "foraAzPipeline.schema.json";
+          text = readFile ./yamlls/schemas/az-pipeline-schema-fora.json;
+        };
+      in {
+        enable = true;
+        settings = {
+          schemas = { __raw = ''{
+            ["${foraAzPipelineSchema}"] = "azure-pipelines*.yaml"
+          }''; };
+        };
+      };
     };
   };
 }

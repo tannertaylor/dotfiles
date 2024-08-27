@@ -1,10 +1,10 @@
 { pkgs, lib, ... }@inputs: let
   plugins = [
+    ./lsp/main.nix
     ./plugins/bufferline.nix
     ./plugins/cmp.nix
     ./plugins/comment.nix
     ./plugins/dap.nix
-    ./plugins/lsp.nix
     ./plugins/telescope.nix
     ./plugins/treesitter.nix
   ];
