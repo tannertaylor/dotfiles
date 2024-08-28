@@ -20,7 +20,8 @@
     { key = "<leader>f"; group = "Find Commands"; }
     { key = "<leader>fa"; action = ":Telescope live_grep<cr>"; desc = "Find Everywhere"; }
     { key = "<leader>fb"; action = ":Telescope buffers<cr>"; desc = "Find Buffers"; }
-    { key = "<leader>fd"; action = ":Telescope diagnostics<cr>"; desc = "Find Diagnostic"; }
+    { key = "<leader>fd"; action = ":Telescope diagnostics<cr>"; desc = "Find Diagnostics"; }
+    { key = "<leader>fe"; action = ":lua require('telescope.builtin').diagnostics({ severity = 'error' })<cr>"; desc = "Find Errors"; }
     { key = "<leader>ff"; action = ":Telescope find_files<cr>"; desc = "Find Files"; }
     { key = "<leader>fh"; action = ":Telescope help_tags<cr>"; desc = "Find Help"; }
     { key = "<leader>fi"; action = ":Telescope lsp_implementations<cr>"; desc = "Find Implementations"; }
