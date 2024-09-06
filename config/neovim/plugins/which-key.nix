@@ -36,6 +36,7 @@
     { key = "<leader>ld"; action = ":lua vim.diagnostic.open_float()<cr>"; desc = "View Line Diagnostics"; }
     { key = "<leader>lh"; action = ":lua vim.lsp.buf.hover()<cr>"; desc = "View Documentation (Hover)"; }
     { key = "<leader>lr"; action = ":lua vim.lsp.buf.rename()<cr>"; desc = "Rename Symbol"; }
+    { key = "<leader>lR"; action = ":lua vim.lsp.buf.references()<cr>"; desc = "View References Window"; }
   ];
 
   keymapsLuaList = map (x:
