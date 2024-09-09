@@ -1,6 +1,7 @@
 { config, lib, ... }: {
   imports = [
     config/bash/bash.nix
+    config/files/main.nix
     config/git/git.nix
     config/kitty/kitty.nix
     config/neovim/neovim.nix
