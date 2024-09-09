@@ -34,7 +34,13 @@
       function sys-rebuild() { sudo nixos-rebuild switch --flake "$NIXOS_FLAKE_PATH#${nixOSFlake}"; }
       function hm-rebuild() { home-manager switch --flake "$HM_FLAKE_PATH#${homeManagerFlake}"; }
 
-      function cd() { zoxide add "$@" && builtin cd "$@"; }
+      function cd() {
+        if [ -z "$@" ]; then
+          builtin cd
+        else
+          zoxide add "$@" && builtin cd "$@"
+        fi
+      }
     '';
   };
 }
