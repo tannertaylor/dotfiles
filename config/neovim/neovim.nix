@@ -10,6 +10,7 @@
   ];
 
   extraPlugins = map (x: import x inputs) [
+    ./plugins/fterm.nix
     ./plugins/lualine.nix
     ./plugins/which-key.nix
   ];

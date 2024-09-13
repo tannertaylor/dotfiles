@@ -2,10 +2,11 @@
   keymaps = [
     { key = "<leader>"; group = "Leader Commands"; }
     { key = "<leader>e"; action = ":NvimTreeToggle<cr>"; desc = "Toggle File Explorer"; }
-    { key = "<leader>y"; luaFunction = ''function ()
-      local buffer_path = vim.fn.expand('%:p:h')
-      local zellij_cmd = 'zellij action new-pane --floating --cwd "' .. buffer_path .. '"'
-      vim.fn.system(zellij_cmd .. ' -- sh -c "NVIM_REMOTE=' .. vim.v.servername .. ' yazi"')
+    { key = "<leader>y"; luaFunction = ''function()
+      require('FTerm'):new({
+        cmd = { 'yazi', vim.fn.expand('%:p:h') },
+        env = { ['NVIM_REMOTE'] = vim.v.servername }
+      }):open()
     end''; desc = "TEMP: Open Yazi"; }
 
     { key = "<leader>b"; group = "Buffer Commands"; }
