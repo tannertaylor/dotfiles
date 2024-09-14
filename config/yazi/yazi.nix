@@ -14,7 +14,7 @@
               nvim "$@"
             else
               NVIM_FILES=$(echo "$@" | tr ' ' '~')
-              nvim --server "$NVIM_REMOTE" --remote-send "<c-\><c-n>:close! | :lua vim.edit_multiple_files('$NVIM_FILES')<cr>"
+              nvim --server "$NVIM_REMOTE" --remote-send "<c-\><c-n>:close! | :lua tt.edit_multiple_files('$NVIM_FILES')<cr>"
             fi
           ''}/bin/${script} $@"; desc = "Neovim"; block = true; }
         ];
