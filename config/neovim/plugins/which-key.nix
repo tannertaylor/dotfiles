@@ -38,6 +38,9 @@
     { key = "<leader>lh"; action = ":lua vim.lsp.buf.hover()<cr>"; desc = "View Documentation (Hover)"; }
     { key = "<leader>lr"; action = ":lua vim.lsp.buf.rename()<cr>"; desc = "Rename Symbol"; }
     { key = "<leader>lR"; action = ":lua vim.lsp.buf.references()<cr>"; desc = "View References Window"; }
+
+    { key = "<leader>t"; group = "Terminal Commands"; }
+    { key = "<leader>tt"; action = ":lua require('FTerm').toggle()<cr>"; desc = "Toggle Terminal"; }
   ];
 
   keymapsLuaList = map (x:
