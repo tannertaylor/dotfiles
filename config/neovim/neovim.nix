@@ -74,5 +74,7 @@ in {
 
       ${extraPluginsLua}
     '';
+
+    extraConfigLuaPre = "tt = {}"; # create global tt module for sharing custom lua code throughout my config
   };
 }

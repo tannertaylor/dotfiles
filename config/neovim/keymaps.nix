@@ -14,7 +14,7 @@
     ];
 
     t = [
-      { key = "<c-t>"; action = "<c-\\><c-n>:lua require('FTerm').toggle()<cr>"; }
+      { key = "<esc>"; action = "<c-\\><c-n>:lua tt.term.close_all()<cr>"; }
     ];
   };
 in {

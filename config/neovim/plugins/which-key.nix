@@ -1,13 +1,7 @@
 { pkgs, ... }: let
   keymaps = [
     { key = "<leader>"; group = "Leader Commands"; }
-    { key = "<leader>e"; action = ":NvimTreeToggle<cr>"; desc = "Toggle File Explorer"; }
-    { key = "<leader>y"; luaFunction = ''function()
-      require('FTerm'):new({
-        cmd = { 'yazi', vim.fn.expand('%:p:h') },
-        env = { ['NVIM_REMOTE'] = vim.v.servername }
-      }):open()
-    end''; desc = "TEMP: Open Yazi"; }
+    { key = "<leader>e"; action = ":lua tt.term.open_yazi()"; desc = "Toggle File Explorer"; }
 
     { key = "<leader>b"; group = "Buffer Commands"; }
     { key = "<leader>bc"; action = ":bd<cr>"; desc = "Close Current Buffer"; }
@@ -40,7 +34,7 @@
     { key = "<leader>lR"; action = ":lua vim.lsp.buf.references()<cr>"; desc = "View References Window"; }
 
     { key = "<leader>t"; group = "Terminal Commands"; }
-    { key = "<leader>tt"; action = ":lua require('FTerm').toggle()<cr>"; desc = "Toggle Terminal"; }
+    { key = "<leader>tg"; action = ":lua tt.term.terminals.lazygit:open()<cr>"; desc = "Toggle Lazygit Terminal"; }
   ];
 
   keymapsLuaList = map (x:
