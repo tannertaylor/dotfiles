@@ -58,7 +58,6 @@ in {
     plugins = {
       dressing.enable = true;
       nvim-autopairs.enable = true;
-      nvim-tree.enable = true;
       ts-autotag.enable = true;
     } // lib.attrsets.mergeAttrsList(map (plugin: import plugin inputs) plugins);
 
