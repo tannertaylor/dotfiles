@@ -1,7 +1,7 @@
 { pkgs, ... }: let
   keymaps = [
     { key = "<leader>"; group = "Leader Commands"; }
-    { key = "<leader>e"; action = ":lua tt.term.open_yazi()"; desc = "Toggle File Explorer"; }
+    { key = "<leader>e"; action = ":lua tt.term.open_yazi()<cr>"; desc = "Toggle File Explorer"; }
 
     { key = "<leader>b"; group = "Buffer Commands"; }
     { key = "<leader>bc"; action = ":bd<cr>"; desc = "Close Current Buffer"; }
