@@ -14,7 +14,7 @@
     ];
 
     t = [
-      { key = "<esc>"; action = "<c-\\><c-n>:lua tt.term.close_all()<cr>"; }
+      { key = "<c-c>"; action = "<c-\\><c-n>:lua tt.term.close_all()<cr>"; }
     ];
   };
 in {
