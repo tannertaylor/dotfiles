@@ -40,7 +40,8 @@
     { key = "<leader>oo"; action = ":ObsidianSearch<cr>"; desc = "Open or Create Note"; }
 
     { key = "<leader>t"; group = "Terminal Commands"; }
-    { key = "<leader>tg"; action = ":lua tt.term.terminals.lazygit:open()<cr>"; desc = "Toggle Lazygit Terminal"; }
+    { key = "<leader>tg"; action = ":lua tt.term.terminals.lazygit:open()<cr>"; desc = "Open Lazygit Terminal"; }
+    { key = "<leader>tt"; action = ":lua require('FTerm').open()<cr>"; desc = "Open Generic Terminal"; }
   ];
 
   keymapsLuaList = map (x:
