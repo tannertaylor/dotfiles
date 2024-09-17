@@ -9,7 +9,7 @@
       docker-compose-language-service.enable = true;
       html.enable = true;
       jsonls.enable = true;
-      marksman.enable = true;
+      lua-ls.enable = true;
       nil-ls.enable = true;
       omnisharp = {
         enable = true;
