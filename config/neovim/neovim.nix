@@ -1,10 +1,12 @@
-{ pkgs, lib, ... }@inputs: let
+{ pkgs, lib, ... }@inputs: with pkgs; with lib; with builtins; let
   plugins = [
     ./lsp/main.nix
     ./plugins/bufferline.nix
     ./plugins/cmp.nix
     ./plugins/comment.nix
     ./plugins/dap.nix
+    ./plugins/dressing.nix
+    ./plugins/obsidian.nix
     ./plugins/telescope.nix
     ./plugins/treesitter.nix
   ];
@@ -12,6 +14,7 @@
   extraPlugins = map (x: import x inputs) [
     ./plugins/fterm.nix
     ./plugins/lualine.nix
+    # ./plugins/render-markdown.nix
     ./plugins/which-key.nix
   ];
 in {
@@ -56,13 +59,12 @@ in {
     };
 
     plugins = {
-      dressing.enable = true;
       nvim-autopairs.enable = true;
       ts-autotag.enable = true;
-    } // lib.attrsets.mergeAttrsList(map (plugin: import plugin inputs) plugins);
+    } // attrsets.mergeAttrsList(map (plugin: import plugin inputs) plugins);
 
     extraPlugins = [
-      pkgs.vimPlugins.omnisharp-extended-lsp-nvim
+      vimPlugins.omnisharp-extended-lsp-nvim
     ] ++ map (x: x.package) extraPlugins;
 
     extraConfigLua = with builtins; let
@@ -75,5 +77,9 @@ in {
     '';
 
     extraConfigLuaPre = "tt = {}"; # create global tt module for sharing custom lua code throughout my config
+
+    # extraConfigLuaPost = ''
+    #   ${readFile ./lua/brain.lua}
+    # '';
   };
 }

@@ -33,6 +33,12 @@
     { key = "<leader>lr"; action = ":lua vim.lsp.buf.rename()<cr>"; desc = "Rename Symbol"; }
     { key = "<leader>lR"; action = ":lua vim.lsp.buf.references()<cr>"; desc = "View References Window"; }
 
+    { key = "<leader>o"; group = "Obsidian Commands"; }
+    { key = "<leader>of"; action = ":ObsidianFollowLink<cr>"; desc = "Follow Link"; }
+    { key = "<leader>ol"; action = ":ObsidianLinks<cr>"; desc = "List Links"; }
+    { key = "<leader>on"; action = ":ObsidianNew<cr>"; desc = "Create New Note"; }
+    { key = "<leader>oo"; action = ":ObsidianSearch<cr>"; desc = "Open or Create Note"; }
+
     { key = "<leader>t"; group = "Terminal Commands"; }
     { key = "<leader>tg"; action = ":lua tt.term.terminals.lazygit:open()<cr>"; desc = "Toggle Lazygit Terminal"; }
   ];
