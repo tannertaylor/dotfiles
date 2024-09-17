@@ -15,20 +15,18 @@
       config.allowUnfree = true;
     };
 
-    mkHMConfig = { headless ? false }: home-manager.lib.homeManagerConfiguration {
+    mkHMConfig = customModule: home-manager.lib.homeManagerConfiguration {
       inherit pkgs;
       modules = [
         ./home.nix
+        customModule
         nixvim.homeManagerModules.nixvim
-        ({ ... }: {
-          inherit headless;
-          username = "tanner";
-        })
+        ({ ... }: { username = "tanner"; })
       ];
     };
   in {
     homeConfigurations = {
-      personal = mkHMConfig { };
+      personal = mkHMConfig { notes.enable = true; };
       headless = mkHMConfig { headless = true; };
     };
   };

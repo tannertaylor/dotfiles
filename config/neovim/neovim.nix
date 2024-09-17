@@ -1,4 +1,4 @@
-{ pkgs, lib, ... }@inputs: with pkgs; with lib; with builtins; let
+{ config, pkgs, lib, ... }@inputs: with pkgs; with lib; with builtins; let
   plugins = [
     ./lsp/main.nix
     ./plugins/bufferline.nix
@@ -6,15 +6,13 @@
     ./plugins/comment.nix
     ./plugins/dap.nix
     ./plugins/dressing.nix
-    ./plugins/obsidian.nix
     ./plugins/telescope.nix
     ./plugins/treesitter.nix
-  ];
+  ] ++ lists.optional config.notes.enable ./plugins/obsidian.nix;
 
   extraPlugins = map (x: import x inputs) [
     ./plugins/fterm.nix
     ./plugins/lualine.nix
-    # ./plugins/render-markdown.nix
     ./plugins/which-key.nix
   ];
 in {
@@ -22,7 +20,13 @@ in {
     ./keymaps.nix
   ];
 
-  programs.nixvim = {
+  options = with options; {
+    notes = {
+      enable = mkEnableOption "enable note taking configuration";
+    };
+  };
+
+  config.programs.nixvim = {
     enable = true;
     enableMan = true;
     viAlias = true;
@@ -77,9 +81,5 @@ in {
     '';
 
     extraConfigLuaPre = "tt = {}"; # create global tt module for sharing custom lua code throughout my config
-
-    # extraConfigLuaPost = ''
-    #   ${readFile ./lua/brain.lua}
-    # '';
   };
 }
