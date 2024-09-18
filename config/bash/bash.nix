@@ -1,4 +1,4 @@
-{ config, ... }: {
+{ config, pkgs, lib, ... }: {
   programs.bash = {
     enable = true;
 
@@ -15,7 +15,15 @@
 
     bashrcExtra = let
       homeManagerFlake = if config.headless then "headless" else "personal";
-      nixOSFlake = if config.headless then "$HOSTNAME" else "personal";
+
+      # Collect all function script files
+      funcScripts = [
+        ./functions/cd.sh
+        ./functions/hm-rebuild.sh
+        ./functions/sys-rebuild.sh
+      ];
+
+      functions = map (file: builtins.readFile file) funcScripts;
     in ''
       # Shell Setup
       eval "$(starship init bash)"
@@ -26,21 +34,11 @@
       # Env Vars
       EDITOR="nvim"
       REPOS="$HOME/code/tannertaylor"
-      HM_FLAKE_PATH="$REPOS/dotfiles"
-      NIXOS_FLAKE_PATH="$REPOS/nixos-config"
-      DEVFLAKES="github:tannertaylor/devflakes"
+      HM_FLAKE_PATH="$REPOS/dotfiles#${homeManagerFlake}"
+      NIXOS_FLAKE_PATH="$REPOS/nixos-config#$HOSTNAME"
 
       # Functions
-      function sys-rebuild() { sudo nixos-rebuild switch --flake "$NIXOS_FLAKE_PATH#${nixOSFlake}"; }
-      function hm-rebuild() { home-manager switch --flake "$HM_FLAKE_PATH#${homeManagerFlake}"; }
-
-      function cd() {
-        if [ -z "$@" ]; then
-          builtin cd
-        else
-          zoxide add "$@" && builtin cd "$@"
-        fi
-      }
+      ${lib.concatStrings (lib.intersperse "\n" functions)}
     '';
   };
 }
