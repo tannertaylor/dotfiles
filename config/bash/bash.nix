@@ -33,6 +33,7 @@
 
       # Env Vars
       EDITOR="nvim"
+      PATH="$PATH:/home/tanner/.dotnet/tools"
       REPOS="$HOME/code/tannertaylor"
       HM_FLAKE_PATH="$REPOS/dotfiles#${homeManagerFlake}"
       NIXOS_FLAKE_PATH="$REPOS/nixos-config#$HOSTNAME"
