@@ -8,7 +8,7 @@
     ./plugins/dressing.nix
     ./plugins/telescope.nix
     ./plugins/treesitter.nix
-  ] ++ lists.optional config.notes.enable ./plugins/obsidian.nix;
+  ];
 
   extraPlugins = map (x: import x inputs) [
     ./plugins/fterm.nix
