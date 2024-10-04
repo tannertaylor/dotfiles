@@ -75,7 +75,14 @@ in {
       extraPluginsWithSetup = filter (x: x ? setup) extraPlugins;
       extraPluginsLua = concatStringsSep "\n" (map (x: "${x.setup}\n") extraPluginsWithSetup);
     in ''
-      vim.diagnostic.config({ update_in_insert = true })
+      vim.diagnostic.config({
+        underline = {
+          vim.diagnostic.severity.WARN,
+          vim.diagnostic.severity.ERROR,
+        },
+        update_in_insert = true,
+        virtual_text = false,
+      })
 
       ${extraPluginsLua}
     '';
