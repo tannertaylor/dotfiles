@@ -1,0 +1,7 @@
+
+[arch]
+sshfs
+nfs-utils
+e2fsprogs
+exfatprogs
+btrfs-progs

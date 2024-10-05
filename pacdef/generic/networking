@@ -1,0 +1,15 @@
+
+[arch]
+wget
+wpa_supplicant
+openresolv
+networkmanager-l2tp
+networkmanager-openconnect
+networkmanager-openvpn
+networkmanager-pptp
+networkmanager-vpnc
+nss-mdns
+networkmanager
+inetutils
+dnsmasq
+avahi
