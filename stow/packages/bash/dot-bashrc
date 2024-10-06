@@ -15,7 +15,6 @@ alias cat="bat"
 alias speedtest="speedtest-rs"
 
 # Env Vars
-PATH="$PATH:~/.cargo/bin:~/.dotnet/tools"
 EDITOR="nvim"
 
 # Custom Functions
