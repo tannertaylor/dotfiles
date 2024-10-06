@@ -4,9 +4,6 @@
 stty werase '^h' # Set ctrl+backspace (^h) to erase previous word in TTY settings.
 eval "$(zoxide init bash)"
 
-# Load Nix
-source ~/.nix-profile/etc/profile.d/nix.sh
-
 # Aliases
 alias ls="lsd"
 alias ll="lsd -al"
