@@ -1,4 +1,3 @@
-
 [arch]
 yay
 which
@@ -28,3 +27,7 @@ dmidecode
 efibootmgr
 base
 base-devel
+zoxide
+lsd
+lazygit
+
