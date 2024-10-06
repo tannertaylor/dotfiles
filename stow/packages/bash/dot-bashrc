@@ -1,0 +1,32 @@
+#!/usr/bin/env bash
+
+# Shell Setup
+stty werase '^h' # Set ctrl+backspace (^h) to erase previous word in TTY settings.
+eval "$(zoxide init bash)"
+
+# Load Nix
+source ~/.nix-profile/etc/profile.d/nix.sh
+
+# Aliases
+alias ls="lsd"
+alias ll="lsd -al"
+alias cl="clear"
+alias dc="docker compose"
+alias tf="terraform"
+alias lg="lazygit"
+alias cat="bat"
+alias speedtest="speedtest-rs"
+
+# Env Vars
+PATH="$PATH:~/.cargo/bin:~/.dotnet/tools"
+EDITOR="nvim"
+
+# Custom Functions
+function cd() {
+  if [ -z "$@" ]; then
+    builtin cd || exit
+  else
+    zoxide add "$@" && builtin cd "$@" || exit
+  fi
+}
+

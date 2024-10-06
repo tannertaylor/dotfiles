@@ -1,0 +1,10 @@
+[user]
+name = Tanner Taylor
+email = tanner@tannertaylor.dev
+
+[init]
+defaultBranch = main
+
+[pull]
+ff = only
+
