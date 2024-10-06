@@ -3,7 +3,7 @@ show_hidden = true
 
 [opener]
 edit = [
-  { run = "nvim_yazi_wrapper.sh", desc = "Neovim", block = true }
+  { run = "~/.config/yazi/nvim_yazi_wrapper.sh \"$@\"", desc = "Neovim", block = true }
 ]
 
 [open]
