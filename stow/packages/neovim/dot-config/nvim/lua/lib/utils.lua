@@ -17,7 +17,19 @@ local function split_string_to_chars(str)
   return chars
 end
 
+--- Maps each value in the given table through the given function into to a new table.
+--- @param tbl table The table to map.
+--- @param func function The function used to process each value in the table.
+local function map(tbl, func)
+  local result = { }
+  for i, value in ipairs(tbl) do
+    result[i] = func(value)
+  end
+  return result
+end
+
 tt.utils = {
   edit_multiple_files = edit_multiple_files,
-  split_string_to_chars = split_string_to_chars
+  split_string_to_chars = split_string_to_chars,
+  map = map,
 }

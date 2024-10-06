@@ -5,6 +5,6 @@ require("lib.utils")
 require("globals")
 require("options")
 require("diagnostics")
-require("lazy")
+require("plugins")
 require("keymaps")
 
