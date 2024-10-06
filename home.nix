@@ -1,7 +1,7 @@
 { config, lib, ... }: {
   imports = [
     # config/neovim/neovim.nix
-    config/yazi/yazi.nix
+#    config/yazi/yazi.nix
   ];
 
   options = with lib.options; {

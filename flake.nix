@@ -26,7 +26,7 @@
     };
   in {
     homeConfigurations = {
-      personal = mkHMConfig { notes.enable = true; };
+      personal = mkHMConfig { /* notes.enable = true; */ };
       headless = mkHMConfig { headless = true; };
     };
   };
