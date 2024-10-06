@@ -22,7 +22,9 @@ return {
     config = function(_, opts)
       local wk = require("which-key")
       wk.setup(opts)
-      wk.add(groups)
+      wk.add(tt.utils.map(groups, function(item)
+        return { [1] = item.key, group = item.group }
+      end))
     end
   }
 }
