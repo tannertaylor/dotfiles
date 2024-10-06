@@ -1,5 +1,5 @@
 { ... }: let
-  sources = [ "nvim_lsp" "buffer" "calc" "path" "nvim_lsp_signature_help" ];
+  sources = [ "nvim_lsp" "buffer" "calc" "path" "nvim_lsp_signature_help" "nvim_lua" ];
 in {
   cmp.enable = true;
   cmp.settings.enabled = true; # override enabled so that completion can appear anywhere

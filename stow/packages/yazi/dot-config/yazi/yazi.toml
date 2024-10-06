@@ -1,0 +1,13 @@
+[manager]
+show_hidden = true
+
+[opener]
+edit = [
+  { run = "nvim_yazi_wrapper.sh", desc = "Neovim", block = true }
+]
+
+[open]
+rules = [
+  { mime = "*", use = "edit" }
+]
+
