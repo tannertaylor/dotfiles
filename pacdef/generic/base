@@ -30,4 +30,7 @@ base-devel
 zoxide
 lsd
 lazygit
+stow
+tldr
+bat
 
