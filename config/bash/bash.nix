@@ -26,14 +26,15 @@
       functions = map (file: builtins.readFile file) funcScripts;
     in ''
       # Shell Setup
-      eval "$(starship init bash)"
       eval "$(zoxide init bash)"
-      eval "$(thefuck --alias)"
       stty werase '^h' # Set ctrl+backspace (^h) to erase previous word in TTY settings.
+
+      # Load Nix
+      source /home/tanner/.nix-profile/etc/profile.d/nix.sh
 
       # Env Vars
       EDITOR="nvim"
-      PATH="$PATH:/home/tanner/.dotnet/tools"
+      PATH="$PATH:/home/tanner/.dotnet/tools:/home/tanner/.cargo/bin"
       REPOS="$HOME/code/tannertaylor"
       HM_FLAKE_PATH="$REPOS/dotfiles#${homeManagerFlake}"
       NIXOS_FLAKE_PATH="$REPOS/nixos-config#$HOSTNAME"
