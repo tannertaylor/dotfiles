@@ -18,7 +18,7 @@ local function load_lspconfigs()
   for _, module in ipairs(lspconfigs) do
     local spec = require("lsp." .. module)
 
-    local opts = spec or { }
+    local opts = spec.opts or { }
     opts.capabilities = opts.capabilities or capabilities
 
     require("lspconfig")[spec.server_name].setup(opts)

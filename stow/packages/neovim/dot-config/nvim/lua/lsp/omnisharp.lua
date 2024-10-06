@@ -1,7 +1,7 @@
 return {
   server_name = "omnisharp",
   opts = {
-    cmd = "omnisharp",
+    cmd = { "/usr/bin/omnisharp" },
     settings = {
       FormattingOptions = {
         EnableEditorConfigSupport = true,
