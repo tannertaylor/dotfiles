@@ -28,6 +28,11 @@ local keymaps = {
       action = ":BufferLineCyclePrev<cr>",
       desc = "Move to Previous Buffer",
     },
+    {
+      key = "<leader>bx",
+      action = ":BufferLinePickClose<cr>",
+      desc = "Choose Buffer to Close",
+    },
 
     -- f: Find Commands
     {
