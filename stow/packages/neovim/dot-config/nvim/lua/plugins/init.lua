@@ -14,6 +14,7 @@ local plugins = {
   "comment",
   "dressing",
   "fterm",
+  "lspconfig",
   "lualine",
   "telescope",
   "treesitter",
