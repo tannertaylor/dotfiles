@@ -55,7 +55,6 @@ end
 return {
   {
     "numToStr/FTerm.nvim",
-    commit = "d1320892cc2ebab472935242d9d992a2c9570180",
 
     config = function()
       load_tool_terminals()

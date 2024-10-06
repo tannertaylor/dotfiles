@@ -1,7 +1,6 @@
 return {
   {
     "nvim-treesitter/nvim-treesitter",
-    commit = "7821feb7e7d55a76b7ffeeb6b0bfb7b8f499ce94",
 
     opts = {
       ensure_installed = {

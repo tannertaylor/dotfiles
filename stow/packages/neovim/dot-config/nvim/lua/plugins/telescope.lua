@@ -1,13 +1,9 @@
 return {
   {
     "nvim-telescope/telescope.nvim",
-    commit = "dc6fc321a5ba076697cca89c9d7ea43153276d81",
 
     dependencies = {
-      {
-        "nvim-lua/plenary.nvim",
-        commit = "2d9b06177a975543726ce5c73fca176cedbffe9d",
-      }
+      "nvim-lua/plenary.nvim",
     },
 
     config = function()

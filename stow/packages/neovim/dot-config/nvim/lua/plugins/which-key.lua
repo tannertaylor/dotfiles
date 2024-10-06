@@ -11,7 +11,6 @@ local groups = {
 return {
   {
     "folke/which-key.nvim",
-    commit = "8badb359f7ab8711e2575ef75dfe6fbbd87e4821",
 
     opts = {
       window = {
