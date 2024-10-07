@@ -9,6 +9,9 @@ end
 --- Loads my selection of lspconfigs from the nvim-lspconfig plugin.
 local function load_lspconfigs()
   local lspconfigs = {
+    "bash_language_server",
+    "docker_compose_langserver",
+    "docker_langserver",
     "lua_language_server",
     "omnisharp",
   }
