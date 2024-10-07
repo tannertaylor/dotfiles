@@ -12,3 +12,6 @@ omnisharp-roslyn-bin
 # Lua
 lua-language-server
 
+# NPM/JS/TS
+npm
+
