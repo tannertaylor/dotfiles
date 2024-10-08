@@ -3,6 +3,7 @@
 # Shell Setup
 stty werase '^h' # Set ctrl+backspace (^h) to erase previous word in TTY settings.
 eval "$(zoxide init bash)"
+eval "$(starship init bash)"
 
 # Aliases
 alias ls="lsd"
@@ -12,6 +13,8 @@ alias dc="docker compose"
 alias tf="terraform"
 alias lg="lazygit"
 alias cat="bat"
+alias vi="nvim"
+alias vim="nvim"
 alias speedtest="speedtest-rs"
 
 # Env Vars
