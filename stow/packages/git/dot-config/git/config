@@ -8,3 +8,6 @@ defaultBranch = main
 [pull]
 ff = only
 
+[includeIf "gitdir:~/repos/fora/**"]
+path = ~/.config/git/fora.config
+
