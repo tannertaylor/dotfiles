@@ -14,6 +14,7 @@ local plugins = {
   "comment",
   "dressing",
   "fterm",
+  "github-theme",
   "lspconfig",
   "lualine",
   "telescope",
