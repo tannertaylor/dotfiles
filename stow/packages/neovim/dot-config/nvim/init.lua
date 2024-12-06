@@ -6,6 +6,5 @@ require("globals")
 require("options")
 require("keymaps")
 require("diagnostics")
-require("lsp")
 require("plugins")
 
