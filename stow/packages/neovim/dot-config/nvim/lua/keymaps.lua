@@ -125,6 +125,11 @@ local keymaps = {
       action = function() tt.term.terminals.lazygit:open() end,
       desc = "Open LazyGit",
     },
+    {
+      key = "<leader>tt",
+      action = function() tt.term.terminals.main:open() end,
+      desc = "Open Terminal"
+    },
   },
 
   i = {
@@ -150,7 +155,7 @@ local keymaps = {
 
   t = {
     {
-      key = "<c-c>",
+      key = "<c-c><c-c>",
       action = function() tt.term.close_all() end,
       desc = "Close Terminals",
     }

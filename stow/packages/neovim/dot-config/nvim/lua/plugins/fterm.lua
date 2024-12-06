@@ -3,7 +3,11 @@ local scratches = { }
 
 --- Loads default terminals with preconfigured tools.
 local function load_tool_terminals()
-  terminals.lazygit = require("FTerm"):new({
+  local fterm = require("FTerm")
+
+  terminals.main = fterm:new({ })
+
+  terminals.lazygit = fterm:new({
     cmd = "lazygit",
   })
 end
