@@ -15,7 +15,6 @@ local plugins = {
   "dressing",
   "fterm",
   "github-theme",
-  -- "lspconfig",
   "lualine",
   "mason",
   "telescope",
