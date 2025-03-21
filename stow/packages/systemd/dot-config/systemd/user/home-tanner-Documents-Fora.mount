@@ -2,7 +2,7 @@
 Description=Fora Network Mount
 
 [Mount]
-What=tanner@192.168.88.200:/users/tanner
+What=tanner@fora-laptop:/users/tanner
 Where=/home/tanner/Documents/Fora
 Type=sshfs
 ; see https://serverfault.com/a/639735
