@@ -1,22 +1,5 @@
 #!/usr/bin/env bash
 
-# Shell Setup
-stty werase '^h' # Set ctrl+backspace (^h) to erase previous word in TTY settings.
-eval "$(zoxide init bash)"
-eval "$(starship init bash)"
-
-# Aliases
-alias ls="lsd"
-alias ll="lsd -al"
-alias cl="clear"
-alias dc="docker compose"
-alias tf="terraform"
-alias lg="lazygit"
-alias cat="bat"
-alias vi="nvim"
-alias vim="nvim"
-alias speedtest="speedtest-rs"
-
 # Env Vars
 EDITOR="nvim"
 
@@ -30,4 +13,22 @@ function cd() {
     zoxide add "$@" && builtin cd "$@" || exit
   fi
 }
+
+# Aliases
+alias ls="lsd"
+alias ll="lsd -al"
+alias cl="clear"
+alias dc="docker compose"
+alias tf="terraform"
+alias lg="lazygit"
+alias cat="bat"
+alias vi="nvim"
+alias vim="nvim"
+alias speedtest="speedtest-rs"
+
+# Interactive Shell Setup
+stty werase '^h' # Set ctrl+backspace (^h) to erase previous word in TTY settings.
+eval "$(zoxide init bash)"
+eval "$(starship init bash)"
+
 
