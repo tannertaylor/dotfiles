@@ -6,8 +6,13 @@ edit = [
   { run = "~/.config/yazi/nvim_yazi_wrapper.sh \"$@\"", desc = "Neovim", block = true }
 ]
 
+xdg-open = [
+  { run = "xdg-open \"$@\"", desc = "Open with Desktop Default" }
+]
+
 [open]
 rules = [
-  { mime = "*", use = "edit" }
+  { mime = "text/*", use = "edit" },
+  { mime = "*", use = "xdg-open" }
 ]
 
