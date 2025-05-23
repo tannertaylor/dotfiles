@@ -2,6 +2,7 @@
 
 # Env Vars
 EDITOR="nvim"
+_ZO_DOCTOR=0 # suppress message about supposed config issue
 
 # Custom Functions
 function cd() {
