@@ -3,7 +3,6 @@ local default_tab_size = 2
 local options = {
   number = true,
   relativenumber = true,
-  statuscolumn = "%C %s %=%r ",
   ignorecase = true,
   showtabline = default_tab_size,
   splitbelow = true,
@@ -24,3 +23,4 @@ local options = {
 for k, v in pairs(options) do
   vim.o[k] = v
 end
+
