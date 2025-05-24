@@ -26,6 +26,7 @@ alias cat="bat"
 alias vi="nvim"
 alias vim="nvim"
 alias speedtest="speedtest-rs"
+alias y="yazi"
 
 # Interactive Shell Setup
 stty werase '^h' # Set ctrl+backspace (^h) to erase previous word in TTY settings.
