@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 
-stow -S bash common git neovim omnisharp systemd yazi
+stow -S bash common git neovim systemd yazi
 
