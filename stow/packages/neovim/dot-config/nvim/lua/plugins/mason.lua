@@ -17,6 +17,7 @@ return {
         "jsonls",
         "lua_ls",
         "marksman", -- markdown
+        "nil_ls", -- nix
         "powershell_es",
         "rust_analyzer",
         "sqlls",
