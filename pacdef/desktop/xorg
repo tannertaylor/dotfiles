@@ -1,7 +1,0 @@
-
-[arch]
-xorg-mkfontscale
-xorg-server
-xorg-xinit
-xorg-xkill
-numlockx
