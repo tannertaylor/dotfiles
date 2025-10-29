@@ -15,9 +15,10 @@ local options = {
   cursorline = true,
   signcolumn = "yes",
   scrolloff = 2,
-  conceallevel = 1,
   timeout = true,
   timeoutlen = 300,
+  list = true,
+  listchars = vim.o.listchars .. ',space:·',
 }
 
 for k, v in pairs(options) do
