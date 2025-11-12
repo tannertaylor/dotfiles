@@ -21,6 +21,16 @@
         "tray"
     ],
 
+    "hyprland/workspaces": {
+      "format": "{icon}",
+      "format-icons": {
+        "1": "",
+        "2": ""
+      },
+      "persistent-workspaces": {
+        "*": 2
+      }
+    },
     "tray": {
         "spacing": 10
     },
