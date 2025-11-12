@@ -13,8 +13,8 @@
         "hyprland/window"
     ],
     "modules-right": [
-        "wireplumber",
         "network",
+        "wireplumber",
         "backlight",
         "battery",
         "clock",
