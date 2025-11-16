@@ -1,7 +1,7 @@
 // https://github.com/Alexays/Waybar/wiki/Configuration
 {
-    "height": 30,
-    "margin-top": 5,
+    "height": 20,
+    "margin-top": 10,
     "margin-left": 20,
     "margin-right": 20,
     "spacing": 4,
