@@ -34,4 +34,8 @@ stty werase '^h' # Set ctrl+backspace (^h) to erase previous word in TTY setting
 eval "$(zoxide init bash)"
 eval "$(starship init bash)"
 
+# Other tools
+if [ -f /usr/share/nvm/init-nvm.sh ]; then 
+  . /usr/share/nvm/init-nvm.sh
+fi
 
