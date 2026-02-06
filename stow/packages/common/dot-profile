@@ -1,4 +1,15 @@
+# Core
 PATH="$PATH:~/.cargo/bin"
+
+# XDG
 XDG_CONFIG_HOME="$HOME/.config"
+XDG_CACHE_HOME="$HOME/.cache"
+XDG_DATA_HOME="$HOME/.local/share"
+XDG_STATE_HOME="$HOME/.local/state"
+
+# Editors
 EDITOR="nvim"
+VISUAL="nvim"
+
+# Misc.
 _ZO_DOCTOR=0 # suppress message about supposed config issue
