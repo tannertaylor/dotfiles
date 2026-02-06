@@ -1,1 +1,4 @@
-PATH="$PATH:~/.cargo/bin:~/.dotnet/tools"
+PATH="$PATH:~/.cargo/bin"
+XDG_CONFIG_HOME="$HOME/.config"
+EDITOR="nvim"
+_ZO_DOCTOR=0 # suppress message about supposed config issue
